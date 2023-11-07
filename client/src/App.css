@@ -9,29 +9,20 @@ body {
     background: linear-gradient(135deg, #2F3E9E, #7F2596);
 }
 
-.pageBox {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
+.container-fluid {
     padding: 2rem;
+    border-radius: 1rem;
     backdrop-filter: blur(10px);
-    width: 100%;
-    max-width: 900px;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.headerAlign,
-.balanceAlign,
-.transactionAlign,
-.spendingAlign {
-    margin-bottom: 1rem;
+.pageBox {
+    max-width: 900px;
+    width: 100%;
 }
 
 .headerText {
     text-align: center;
-    color: #fff;
-}
-
-.dashboardHeader {
-    margin-bottom: 2rem;
 }
 
 .card.displayCards {
@@ -39,23 +30,6 @@ body {
     border: 1px solid #fff;
     border-radius: 0.5rem;
     padding: 1rem;
-    margin-bottom: 1rem;
-}
-
-.balanceContainer,
-.transactionContainer {
-    margin-top: 1rem;
-}
-
-.balanceBoxes,
-.transactionDisplays {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #fff;
-}
-
-.balanceBoxes:last-child,
-.transactionDisplays:last-child {
-    border-bottom: none;
 }
 
 .btn-primary {
@@ -73,6 +47,63 @@ body {
     background-color: #3E8FD6;
 }
 
+.form-control,
+.form-floating>label {
+    background-color: transparent;
+    color: #ddd;
+    border: 2px solid #fff;
+}
+
+.form-control:focus {
+    border-color: #A5FCFF;
+    outline: 0;
+    box-shadow: none;
+}
+
+.formBoxHeader {
+    margin-bottom: 1rem;
+}
+
+.upperPage,
+.pageBox,
+.pageTextBox {
+    margin-bottom: 2rem;
+}
+
+.descriptionSubText {
+    color: #ddd;
+    margin-bottom: 2rem;
+}
+
+.tagline {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.taglineSubtext {
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.registerPage {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.linkButtonAlign {
+    text-align: center;
+}
+
+.balanceBoxes,
+.transactionDisplays {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #fff;
+}
+
+.balanceBoxes:last-child,
+.transactionDisplays:last-child {
+    border-bottom: none;
+}
+
 .transactionDescriptionAlign,
 .transactionAmountAlign {
     display: flex;
@@ -82,8 +113,4 @@ body {
 
 .transactionAmountAlign {
     text-align: right;
-}
-
-.linkButtonAlign {
-    text-align: center;
 }
