@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('brycpt');
+const accountSchema = require('./Account');
 
 const userSchema = new Schema(
     {
@@ -16,6 +17,7 @@ const userSchema = new Schema(
         plaidAccessToken: {
             type: String,
         },
+        accounts: [accountSchema],
     }
 );
 
