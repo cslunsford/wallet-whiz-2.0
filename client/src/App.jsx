@@ -21,6 +21,26 @@ const App = () => {
     { company: "Company C", date: "2023-11-10", amount: "$75.00" },
   ];
 
+  //Placeholder data for the homepage
+  const tagline = "Welcome to the Future of Finance";
+  const taglineSubtext = "Take control of your finances now";
+  const loginText = "Login";
+  const registerText = "Register";
+
+ //Placeholder data for register page
+  const registerHeader = "Register";
+  const registerEmail = "Email Address";
+  const registerPassword = "Password";
+  const repeatPassword = "Confirm Password";
+  const registerButton = "Register";
+
+  //Placeholder data for user page
+  const userHeader = "User";
+  const userAccount = "Account";
+  const userBalance = "Balance";
+  const userTransactions = "Transactions";
+  const userSpending = "Spending";
+
   // Placeholder data for the spending pie chart
   const spendingData = [
     { category: "Food", amount: 300 },
