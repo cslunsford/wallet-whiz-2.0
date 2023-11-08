@@ -1,9 +1,7 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
-import './RegisterPage.css'; // Import the dedicated CSS for this component
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './RegisterPage.css';
 const RegisterPage = () => {
-  // Implement form submission logic here, if necessary
 
   return (
     <div className="container">
