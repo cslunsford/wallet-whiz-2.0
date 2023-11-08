@@ -1,116 +1,90 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Oswald:wght@200;400&display=swap');
+
+
+.navbar {
+    background-color: #46709d50;
     color: #fff;
-    background: linear-gradient(135deg, #2F3E9E, #7F2596);
-}
-
-.container-fluid {
-    padding: 2rem;
-    border-radius: 1rem;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.pageBox {
-    max-width: 900px;
-    width: 100%;
-}
-
-.headerText {
-    text-align: center;
-}
-
-.card.displayCards {
-    background: transparent;
-    border: 1px solid #fff;
-    border-radius: 0.5rem;
-    padding: 1rem;
-}
-
-.btn-primary {
-    background-color: #222C6A;
-    border: none;
-    width: 100%;
-    max-width: 200px;
-    margin: 1rem auto;
-    display: block;
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-    background-color: #3E8FD6;
-}
-
-.form-control,
-.form-floating>label {
-    background-color: transparent;
-    color: #ddd;
-    border: 2px solid #fff;
-}
-
-.form-control:focus {
-    border-color: #A5FCFF;
-    outline: 0;
-    box-shadow: none;
-}
-
-.formBoxHeader {
-    margin-bottom: 1rem;
-}
-
-.upperPage,
-.pageBox,
-.pageTextBox {
-    margin-bottom: 2rem;
-}
-
-.descriptionSubText {
-    color: #ddd;
-    margin-bottom: 2rem;
-}
-
-.tagline {
-    color: #fff;
-    margin-bottom: 0.5rem;
-}
-
-.taglineSubtext {
-    color: #ddd;
-    margin-bottom: 1rem;
-}
-
-.registerPage {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.linkButtonAlign {
-    text-align: center;
-}
-
-.balanceBoxes,
-.transactionDisplays {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #fff;
-}
-
-.balanceBoxes:last-child,
-.transactionDisplays:last-child {
-    border-bottom: none;
-}
-
-.transactionDescriptionAlign,
-.transactionAmountAlign {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
 }
 
-.transactionAmountAlign {
-    text-align: right;
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.headerText {
+    font-family: 'Kanit', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+
+}
+
+.headerLogo {
+    display: flex;
+    height: 50px;
+    margin-left: 10%;
+    margin-right: 40px;
+    border-radius: 15px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.listText {
+    display: inline-block;
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1.6px;
+    font-size: 16px;
+}
+
+.listText:hover {
+    cursor: pointer;
+}
+
+.listText::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+.listText:hover::after {
+    transform: scaleX(1);
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+    }
+
+    .listText {
+        margin: 1px 0;
+    }
 }
