@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Logo from '../assets/walletWhiz logo2.png';
 
@@ -10,10 +11,10 @@ const Navbar = () => {
             <img class="headerLogo" src={Logo}></img>
         </div>
         <ul class="nav-links">
-            <li><a class="listText" href="#">Dashboard</a></li>
-            <li><a class="listText" href="#">Transactions</a></li>
-            <li><a class="listText" href="#">Budgets</a></li>
-            <li><a class="listText" href="#">Account</a></li>
+            <li><Link class="listText" href="/dashboard">Login</Link></li>
+            <li><Link class="listText" href="/homepage">Home</Link></li>
+            <li><Link class="listText" href="/register">Register</Link></li>
+            <li><Link class="listText" href="/user">Account</Link></li>
         </ul>
     </nav>
     );
