@@ -7,6 +7,7 @@ import App from './App.jsx';
 import Dashboard from './pages/dashboard';
 import Homepage from './pages/homepage';
 import User from './pages/user';
+import './utils/index.css'
 
 const router = createBrowserRouter([
     {
