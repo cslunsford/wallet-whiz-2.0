@@ -1,5 +1,4 @@
 import React from 'react';
-
 function homepage() {
     return (
         <div className="container-fluid upperPage">

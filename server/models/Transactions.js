@@ -8,7 +8,7 @@ const transactionSchema = new Schema({
         type: String,
     },
     date: {
-        type: Date,
+        type: String,
     },
 });
 
