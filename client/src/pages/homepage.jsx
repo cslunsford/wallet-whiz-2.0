@@ -1,9 +1,45 @@
 import React from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { alpha, styled } from '@mui/material/styles';
+
+const CssTextField = styled(TextField)({
+    width: '100%',
+    '& .MuiInputBase-root': {
+        '& fieldset': {
+        borderColor: '#fff',
+        }
+    },
+    "& .MuiOutlinedInput-root.Mui-focused": {
+        "& > fieldset": {
+        borderColor: "#afafaf"
+        }
+    },
+    '& .MuiInputBase-root:hover': {
+        '& fieldset': {
+        borderColor: '#afafaf',
+        }
+    },
+    '&.Mui-focused fieldset': {
+        borderColor: '#6F7E8C',
+    },
+    '& .MuiFormLabel-root': {
+        color: '#fff',
+    },
+    '& .MuiFormLabel-root:hover': {
+        color: '#afafaf',
+    },
+    '& label.Mui-focused': {
+        color: '#afafaf',
+        borderColor: '#afafaf'
+    },
+});
+
 function homepage() {
     return (
-        <div className="container-fluid upperPage">
-            <div className="container-fluid pageBox">
-                <div className="container-fluid pageTextBox">
+        <div className="container pageBox">
+            <div className="container pageInner">
+                <div className="container pageTextBox">
                     <h2 className="headerText">Why use WalletWhiz?</h2>
                     <p className="descriptionSubText">
                         Managing your money can be hard and time-consuming<br />
@@ -12,25 +48,18 @@ function homepage() {
                         your finances, so you can spend more time on what matters
                     </p>
                 </div>
-                <div className="container-fluid loginBoxesContainer">
+                <div className="container loginBoxesContainer">
                     <div className="formBoxAlign">
                         <h3 className="tagline">Already a user?</h3>
-                        <h4 className="taglineSubtext">Go on, start managing your money</h4>
-                        <div className="card displayCards" id="loginBox">
+                        <div className="card" id="loginBox">
                             <h3 className="formBoxHeader">Login</h3>
-                            <div className="form-floating formInputs">
-                                <input type="email" className="form-control" id="loginEmail" name="email" placeholder="name@example.com" />
-                                <label htmlFor="loginEmail">Email address</label>
-                            </div>
-                            <div className="form-floating formInputs">
-                                <input type="password" className="form-control" id="loginPassword" name="password" placeholder="Password" />
-                                <label htmlFor="loginPassword">Password</label>
-                            </div>
-                            <button type="button" className="btn btn-primary btn-lg" id="loginButton">Log In</button>
+                            <CssTextField id="margin-normal" label="Username" margin='normal' variant="outlined" />
+                            <CssTextField id="margin-normal" label="Password" margin='normal' variant="outlined" />
+                            <Button variant="contained" size='medium' disableElevation>Login</Button>
                         </div>
                         <div className="registerButtonBox">
                             <h3 className="registerHeader">Not yet managing your money? Register here</h3>
-                            <button type="button" className="btn btn-primary btn-lg" id="registerButton">Register</button>
+                            <Button variant="contained" disableElevation>Register</Button>
                         </div>
                     </div>
                 </div>

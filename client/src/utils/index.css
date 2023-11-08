@@ -1,66 +1,72 @@
 body {
-    font-family: 'Roboto', sans-serif;
     margin: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    width: 100%;
     color: #fff;
     background: linear-gradient(135deg, #2F3E9E, #7F2596);
 }
 
-.container-fluid {
+.container {
     padding: 2rem;
     border-radius: 1rem;
-    backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.1);
 }
 
 .pageBox {
+    margin-top: 10px;
     max-width: 900px;
     width: 100%;
 }
 
 .headerText {
+    font-family: 'Roboto', sans-serif;
     text-align: center;
 }
 
-.card.displayCards {
+.card {
     background: transparent;
+    align-items: center;
     border: 1px solid #fff;
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 2.5rem;
 }
 
-.btn-primary {
-    background-color: #222C6A;
+.btn {
+    background-color: #2F3E9E;
+    color: #fff;
     border: none;
+    height: 50px;
     width: 100%;
     max-width: 200px;
     margin: 1rem auto;
     display: block;
 }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
+.btn:hover,
+.btn:focus,
+.btn:active {
     background-color: #3E8FD6;
 }
 
-.form-control,
-.form-floating>label {
+.form-control {
+    border: 2px solid #fff;
+    margin: 5px;
+}
+
+.form-control>label {
     background-color: transparent;
     color: #ddd;
-    border: 2px solid #fff;
 }
 
 .form-control:focus {
-    border-color: #A5FCFF;
     outline: 0;
     box-shadow: none;
 }
 
 .formBoxHeader {
+    color: #fff;
     margin-bottom: 1rem;
 }
 
@@ -72,17 +78,27 @@ body {
 
 .descriptionSubText {
     color: #ddd;
-    margin-bottom: 2rem;
+    margin: 1rem;
+    text-align: center;
 }
 
 .tagline {
     color: #fff;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .taglineSubtext {
     color: #ddd;
     margin-bottom: 1rem;
+}
+
+.registerButtonBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    margin-top: 20px;
 }
 
 .registerPage {
@@ -115,54 +131,13 @@ body {
     text-align: right;
 }
 
-/* General body styling */
-/* Note: You might want to scope these styles more specifically to avoid affecting other parts of your application */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    color: #fff;
-    background: linear-gradient(135deg, #2f3e9e, #7f2596);
-}
-
-/* Styling for the registration container */
 .registerPage {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
     padding: 2rem;
 }
 
-/* Unified input and label styling */
 .form-control, .form-floating > label {
     background-color: transparent;
-    color: #ddd;
-}
-
-.form-control {
-    border: 2px solid #fff;
-}
-
-/* Style for the input when it is in focus */
-.form-control:focus {
-    border-color: #a5fcff;
-    outline: 0;
-    box-shadow: none;
-}
-
-/* Button styling */
-.btn-primary {
-    background-color: #222c6a;
-    border: none;
-}
-
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    background-color: #3e8fd6;
-}
-
-/* Header margin */
-.formBoxHeader {
-    margin-bottom: 1rem;
+    color: #afafaf;
 }
