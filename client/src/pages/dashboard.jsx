@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import '../App.css'; 
-import Chart from 'react-chartjs-2'; 
+//import Chart from 'react-chartjs-2'; 
 
 const Dashboard = () => {
   // Placeholder data
