@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import '../App.css'; 
+import Button from '@mui/material/Button';
 //import Chart from 'react-chartjs-2'; 
 
 function Dashboard() {
@@ -24,28 +25,26 @@ function Dashboard() {
 
   return (
     <div>
-      <div className="container-fluid pageBox">
-        <div className="container-fluid headerAlign">
+      <div className="container pageBox">
+        <div className="container pageInner">
+          <div className="container balanceAlign">
           <h2 className="headerText dashboardHeader">Hello User!</h2>
-        </div>
-        <div className="container-fluid pageInner">
-          <div className="container-fluid balanceAlign">
             <div className="card displayCards" id="balanceCard">
-              <h3 className="card-title headerText" id="accountsHeader">
+              <h3 className="headerText" id="accountsHeader">
                 ACCOUNTS
               </h3>
-              <div className="container-fluid balanceContainer" id="balanceContainer">
+              <div className="container balanceContainer" id="balanceContainer">
                 <div className="balanceBoxes">
                   <h4 className="headerText balanceHeaders" id="savingsHeader">
                     Savings Account
                   </h4>
-                  <p className="card-text" id="savings">$5,000</p>
+                  <p className="headerText" id="savings">$5,000</p>
                 </div>
                 <div className="balanceBoxes">
                   <h4 className="headerText balanceHeaders" id="checkingHeader">
                     Checking Account
                   </h4>
-                  <p className="card-text" id="checking">$2,500</p>
+                  <p className="headerText" id="checking">$2,500</p>
                 </div>
               </div>
             </div>
@@ -82,22 +81,20 @@ function Dashboard() {
                 MONTHLY SPENDING
               </h2>
               <div className="spendingChart">
-                <Chart
+                {/* /* <Chart
                   type="pie"
                   data={spendingData}
                   options={{
                     responsive: true,
                     maintainAspectRatio: false,
                   }}
-                />
+                /> */ }
               </div>
             </div>
-          </div>
-        </div>
         <div className="linkButtonAlign">
-          <button className="btn btn-primary btn-lg" id="link-button">
-            Link Account
-          </button>
+          <Button variant='contained' disableElevation>Link Account</Button>
+        </div>
+          </div>
         </div>
       </div>
     </div>
