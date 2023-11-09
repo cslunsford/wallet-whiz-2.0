@@ -5,7 +5,11 @@ export const PageTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         contained: {
-          backgroundColor: '#7F2596'
+          backgroundColor: '#7F2596',
+          marginTop: '20px',
+          '&:hover': {
+            backgroundColor: '#681e7a',
+          },
         }
       }
     },
@@ -18,28 +22,25 @@ export const PageTheme = createTheme({
           width: '100%',
           '& .MuiInputBase-root': {
             '& fieldset': {
-            borderColor: '#fff',
+              borderColor: '#fff',
             },
           },
           "& .MuiOutlinedInput-root.Mui-focused": {
             "& > fieldset": {
-            borderColor: "#afafaf"
+              borderColor: "#afafaf"
             }
-        },
-        '& .MuiInputBase-root:hover': {
-          '& fieldset': {
-          borderColor: '#afafaf',
-          }
-      },
-      '& .MuiFormLabel-root': {
-        color: '#fff',
-    },
-    '& .MuiFormLabel-root:hover': {
-      color: '#afafaf',
-  },
-  '& label.Mui-focused': {
-    color: '#afafaf',
-},
+          },
+          '& .MuiInputBase-root:hover': {
+            '& fieldset': {
+              borderColor: '#afafaf',
+            }
+          },
+          '& .MuiFormLabel-root': {
+            color: '#fff',
+          },
+          '& label.Mui-focused': {
+            color: '#afafaf',
+          },
         },
       },
     },

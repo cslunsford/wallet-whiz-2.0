@@ -1,48 +1,7 @@
 import React from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { alpha, styled, createTheme, ThemeProvider } from '@mui/material/styles';
-import { Box, Stack } from '@mui/system';
-import { Typography } from '@mui/material';
 
-const theme = createTheme({
-    palette: {
-        violet: {
-            main: '#7F2596'
-        }
-    }
-});
-
-const CssTextField = styled(TextField)({
-    width: '100%',
-    '& .MuiInputBase-root': {
-        '& fieldset': {
-        borderColor: '#fff',
-        }
-    },
-    "& .MuiOutlinedInput-root.Mui-focused": {
-        "& > fieldset": {
-        borderColor: "#afafaf"
-        }
-    },
-    '& .MuiInputBase-root:hover': {
-        '& fieldset': {
-        borderColor: '#afafaf',
-        }
-    },
-    '&.Mui-focused fieldset': {
-        borderColor: '#6F7E8C',
-    },
-    '& .MuiFormLabel-root': {
-        color: '#fff',
-    },
-    '& .MuiFormLabel-root:hover': {
-        color: '#afafaf',
-    },
-    '& label.Mui-focused': {
-        color: '#afafaf',
-    },
-});
 
 function homepage() {
     return (
@@ -63,7 +22,7 @@ function homepage() {
                         <div className="card" id="loginBox">
                             <h3 className="formBoxHeader">Login</h3>
                             <TextField id="margin-normal" label="Username" margin='normal' variant="outlined" />
-                            <CssTextField id="margin-normal" label="Password" margin='normal' variant="outlined" />
+                            <TextField id="margin-normal" label="Password" margin='normal' variant="outlined" />
                             <Button variant='contained' disableElevation>Login</Button>
                         </div>
                         <div className="registerButtonBox">
