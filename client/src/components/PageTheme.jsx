@@ -1,6 +1,11 @@
 import { createTheme } from "@mui/material";
 
 export const PageTheme = createTheme({
+  typography: {
+    fontFamily: ['kanit', 'sans-serif',
+    'oswald', 'sans-serif',
+  ]
+  },
   components: {
     MuiButton: {
       styleOverrides: {
@@ -20,6 +25,7 @@ export const PageTheme = createTheme({
         },
         root: {
           width: '100%',
+          fontFamily: 'font-family: kanit, sans-serif;',
           '& .MuiInputBase-root': {
             '& fieldset': {
               borderColor: '#fff',
