@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 
-const user = () => {
+const User = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -164,4 +164,4 @@ const user = () => {
     );
 };
 
-export default user;
+export default User;

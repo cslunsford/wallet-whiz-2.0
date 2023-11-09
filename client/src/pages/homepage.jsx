@@ -1,7 +1,17 @@
 import React from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { alpha, styled } from '@mui/material/styles';
+import { alpha, styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { Box, Stack } from '@mui/system';
+import { Typography } from '@mui/material';
+
+const theme = createTheme({
+    palette: {
+        violet: {
+            main: '#7F2596'
+        }
+    }
+});
 
 const CssTextField = styled(TextField)({
     width: '100%',
@@ -31,7 +41,6 @@ const CssTextField = styled(TextField)({
     },
     '& label.Mui-focused': {
         color: '#afafaf',
-        borderColor: '#afafaf'
     },
 });
 
@@ -53,9 +62,9 @@ function homepage() {
                         <h3 className="tagline">Already a user?</h3>
                         <div className="card" id="loginBox">
                             <h3 className="formBoxHeader">Login</h3>
-                            <CssTextField id="margin-normal" label="Username" margin='normal' variant="outlined" />
+                            <TextField id="margin-normal" label="Username" margin='normal' variant="outlined" />
                             <CssTextField id="margin-normal" label="Password" margin='normal' variant="outlined" />
-                            <Button variant="contained" size='medium' disableElevation>Login</Button>
+                            <Button variant='contained' disableElevation>Login</Button>
                         </div>
                         <div className="registerButtonBox">
                             <h3 className="registerHeader">Not yet managing your money? Register here</h3>
