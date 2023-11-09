@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <nav class="navbar">
         <div class="header">
-            <h1 class="headerText">WalletWhiz</h1>
+            <h1 class="navHeaderText">WalletWhiz</h1>
             <img class="headerLogo" src={Logo}></img>
         </div>
         <ul class="nav-links">

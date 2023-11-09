@@ -1,39 +1,7 @@
 import React from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { alpha, styled } from '@mui/material/styles';
 
-const CssTextField = styled(TextField)({
-    width: '100%',
-    '& .MuiInputBase-root': {
-        '& fieldset': {
-        borderColor: '#fff',
-        }
-    },
-    "& .MuiOutlinedInput-root.Mui-focused": {
-        "& > fieldset": {
-        borderColor: "#afafaf"
-        }
-    },
-    '& .MuiInputBase-root:hover': {
-        '& fieldset': {
-        borderColor: '#afafaf',
-        }
-    },
-    '&.Mui-focused fieldset': {
-        borderColor: '#6F7E8C',
-    },
-    '& .MuiFormLabel-root': {
-        color: '#fff',
-    },
-    '& .MuiFormLabel-root:hover': {
-        color: '#afafaf',
-    },
-    '& label.Mui-focused': {
-        color: '#afafaf',
-        borderColor: '#afafaf'
-    },
-});
 
 function homepage() {
     return (
@@ -53,9 +21,9 @@ function homepage() {
                         <h3 className="tagline">Already a user?</h3>
                         <div className="card" id="loginBox">
                             <h3 className="formBoxHeader">Login</h3>
-                            <CssTextField id="margin-normal" label="Username" margin='normal' variant="outlined" />
-                            <CssTextField id="margin-normal" label="Password" margin='normal' variant="outlined" />
-                            <Button variant="contained" size='medium' disableElevation>Login</Button>
+                            <TextField id="margin-normal" label="Username" margin='normal' variant="outlined" />
+                            <TextField id="margin-normal" label="Password" margin='normal' variant="outlined" />
+                            <Button variant='contained' disableElevation>Login</Button>
                         </div>
                         <div className="registerButtonBox">
                             <h3 className="registerHeader">Not yet managing your money? Register here</h3>

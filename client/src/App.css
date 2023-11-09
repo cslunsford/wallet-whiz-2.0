@@ -17,20 +17,18 @@
     align-items: center;
 }
 
-.headerText {
+.navHeaderText {
     font-family: 'Kanit', sans-serif;
     font-size: 26px;
     font-weight: bold;
     margin: 0;
-
 }
 
 .headerLogo {
     display: flex;
-    height: 50px;
+    height: 30px;
     margin-left: 10%;
     margin-right: 40px;
-    border-radius: 15px;
 }
 
 .nav-links {
