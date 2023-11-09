@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'; 
 //import Chart from 'react-chartjs-2'; 
 
-const Dashboard = () => {
+function Dashboard() {
   // Placeholder data
   const transactions = [
     { company: 'Company A', date: '2023-11-01', amount: '$100.00' },
