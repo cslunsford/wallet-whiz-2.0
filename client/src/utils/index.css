@@ -147,3 +147,21 @@ body {
     background-color: transparent;
     color: #afafaf;
 }
+
+.userpage {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 10px;
+;   margin-top: 100px;
+}
+
+.usertextbottom {
+    padding: 10px;
+    margin: 100px;
+    text-align: center;
+}
+
+.formInputs {
+    margin: 30px;
+}
