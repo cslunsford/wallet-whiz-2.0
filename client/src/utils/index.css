@@ -147,3 +147,9 @@ body {
     background-color: transparent;
     color: #afafaf;
 }
+
+@media only screen and (max-width: 600px) {
+    .pageTextBox {
+        display: none;
+    }
+}
