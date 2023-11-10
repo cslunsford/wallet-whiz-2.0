@@ -1,7 +1,8 @@
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 
-const User = () => {
+function User() {
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
