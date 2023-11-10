@@ -1,8 +1,7 @@
 const { GraphQLError } = require('graphql');
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
 
-const secret = process.env.SECRET;
+const secret = 'WalletWhizSecret';
 const expiration = '2h';
 
 module.exports = {

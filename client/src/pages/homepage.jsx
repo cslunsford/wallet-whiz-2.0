@@ -1,7 +1,6 @@
 import React from 'react';
-import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-
+import LoginForm from '../components/LoginForm';
 
 function homepage() {
     return (
@@ -21,9 +20,7 @@ function homepage() {
                         <h3 className="tagline">Already a user?</h3>
                         <div className="card" id="loginBox">
                             <h3 className="formBoxHeader">Login</h3>
-                            <TextField id="margin-normal" label="Username" margin='normal' variant="outlined" />
-                            <TextField id="margin-normal" label="Password" margin='normal' variant="outlined" />
-                            <Button variant='contained' disableElevation>Login</Button>
+                            <LoginForm />
                         </div>
                         <div className="registerButtonBox">
                             <h3 className="registerHeader">Not yet managing your money? Register here</h3>
