@@ -10,10 +10,21 @@ body {
     background: linear-gradient(135deg, #2F3E9E, #7F2596);
 }
 
+.upperContainer {
+    margin-top: 40px;
+}
+
 .container {
     padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
     border-radius: 1rem;
     background: rgba(255, 255, 255, 0.1);
+}
+
+.upperContainer {
+    margin-top: 80px;
 }
 
 .pageBox {
@@ -95,6 +106,10 @@ body {
     text-align: center;
 }
 
+.taglineBig {
+    font-size: 40px;
+}
+
 .registerButtonBox {
     display: flex;
     flex-direction: column;
@@ -165,6 +180,7 @@ body {
 
 .formInputs {
     margin: 30px auto; 
+}
 
 @media only screen and (max-width: 600px) {
     .pageTextBox {
