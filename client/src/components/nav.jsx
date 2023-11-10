@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <nav class="navbar">
         <div class="header">
-            <h1 class="navHeaderText">WalletWhiz</h1>
+        <a><Link class="listText" to="/">WalletWhiz</Link></a>
             <img class="headerLogo" src={Logo}></img>
         </div>
         <ul class="nav-links">
