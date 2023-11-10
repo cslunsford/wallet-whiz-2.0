@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Navbar from './components/nav';
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,6 +9,8 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
+import { ThemeProvider } from '@emotion/react';
+import { PageTheme } from './components/PageTheme';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -31,7 +34,10 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      <ThemeProvider theme={PageTheme}>
+      <Navbar />
       <Outlet />
+      </ThemeProvider>
     </ApolloProvider>
   );
 }
