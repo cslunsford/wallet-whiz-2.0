@@ -1,30 +1,21 @@
 import React from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 const RegisterPage = () => {
 
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-md-8 col-lg-6">
-          <div className="registerPage">
-            <h3 className="tagline">Welcome to the Future of Finance</h3>
-            <h4 className="taglineSubtext mb-4">Take control of your finances now</h4>
-            <div className="formBoxHeader">Register</div>
-            <form>
-              <div className="form-floating mb-3">
-                <input type="email" className="form-control" id="registerEmail" name="email" placeholder="name@example.com" />
-                <label htmlFor="registerEmail">Email Address</label>
-              </div>
-              <div className="form-floating mb-3">
-                <input type="password" className="form-control" id="registerPassword" name="password" placeholder="Password" />
-                <label htmlFor="registerPassword">Password</label>
-              </div>
-              <div className="form-floating mb-3">
-                <input type="password" className="form-control" id="repeatPassword" name="passwordConfirm" placeholder="Password" />
-                <label htmlFor="repeatPassword">Confirm Password</label>
-              </div>
-              <button type="submit" id="register" className="btn btn-primary btn-lg btn-block">Register</button>
-            </form>
+    <div className="container upperContainer">
+      <div className="container">
+        <div className="container">
+          <h3 className="tagline taglineBig">Welcome to the Future of Finance</h3>
+          <h4 className="tagline">Take control of your finances now</h4>
+          <div className="card">
+            <h4 className='tagline'>Register</h4>          
+            <TextField id="margin-normal" label="Username" margin='normal' variant="outlined"/>
+            <TextField id="margin-normal" label="Password" margin='normal' variant="outlined" />
+            <TextField id="margin-normal" label=" Repeat Password" margin='normal' variant="outlined" />
+            <Button variant='contained' disableElevation>Register</Button>
           </div>
         </div>
       </div>
