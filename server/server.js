@@ -1,4 +1,6 @@
 const express = require('express');
+//Axios
+const axios = require('axios');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
@@ -6,7 +8,7 @@ const { authMiddleware } = require('./utils/auth');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
-
+require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
@@ -34,6 +36,7 @@ const startApolloServer = async () => {
 
     db.once('open', () => {
         app.listen(PORT, () => console.log(`Now listenting on localhost:${PORT}`));
+        fetchData();
     });
 };
 
@@ -61,7 +64,7 @@ const configuration = new Configuration({
   let linkToken; //declare a variable to store the link token to export it to another file
 
   //PLAID Create a new link_token -- Step 1
-app.post('/create_link_token', async function (request, response) {
+  app.post('/create_link_token', async function (request, response) {
     const plaidRequest = {
         user: {
             client_user_id: 'user',
@@ -69,20 +72,22 @@ app.post('/create_link_token', async function (request, response) {
         client_name: 'Plaid Test App',
         products: ['auth'],
         language: 'en',
-        redirect_uri: 'http://localhost:3000/',
+        redirect_uri: 'http://localhost:5173/',
         country_codes: ['US'],
     };
     try {
         const createTokenResponse = await plaidClient.linkTokenCreate(plaidRequest);
+        const linkToken = createTokenResponse.data.link_token;
+        console.log('Link Token:', linkToken); // Add this line to log the link token
         response.json(createTokenResponse.data);
-        
     } catch (error) {
-      console.error('Error:', error.message);
+        console.error('Error:', error.message);
         response.status(500).send("failure");
         console.error('Plaid API Error:', error.response ? error.response.data : error.message);
         // handle error
     }
-  });
+});
+
 
   //PLAID Exchange public_token for access_token -- Step 2
 app.post('/exchange_public_token', async function (
@@ -135,9 +140,22 @@ app.get('/accounts', async function (request, response, next) {
 }
 
 
+const fetchData = async () => {
+    try {
+        const response = await axios.post('http://localhost:3001/create_link_token');
+        console.log('Response:', response.data);
+        linkToken = response.data.link_token; // Extract link_token to variable linkToken
+        console.log("Link Token in server.js:", linkToken);
+
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+};
+
+/*
 async function fetchData() {
     try {
-      const response = await axios.post('http://localhost:3000/create_link_token');
+      const response = await axios.post('http://localhost:5173/create_link_token');
       console.log('Response:', response.data);
       linkToken = response.data.link_token; // Extract link_token to variable linkToken
       console.log("Link Token in server.js:", linkToken);
@@ -146,7 +164,6 @@ async function fetchData() {
       console.error('Error:', error.message);
     }
   }
-
-
-
+*/
 startApolloServer();
+
