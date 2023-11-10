@@ -1,18 +1,20 @@
 import React from 'react';
-import './Navbar.css';
+import { Link } from 'react-router-dom';
+import '../App.css';
+import Logo from '../assets/walletWhiz logo2.png';
 
 const Navbar = () => {
     return (
         <nav class="navbar">
         <div class="header">
-            <h1 class="headerText">WalletWhiz</h1>
-            <img class="headerLogo" src="../assets/WalletWiz logo.png"></img>
+        <a><Link class="listText" to="/">WalletWhiz</Link></a>
+            <img class="headerLogo" src={Logo}></img>
         </div>
         <ul class="nav-links">
-            <li><a class="listText" href="#">Dashboard</a></li>
-            <li><a class="listText" href="#">Transactions</a></li>
-            <li><a class="listText" href="#">Budgets</a></li>
-            <li><a class="listText" href="#">Account</a></li>
+            <li><Link class="listText" to="/">Login</Link></li>
+            <li><Link class="listText" to="/dashboard">Home</Link></li>
+            <li><Link class="listText" to="/register">Register</Link></li>
+            <li><Link class="listText" to="/user">Account</Link></li>
         </ul>
     </nav>
     );

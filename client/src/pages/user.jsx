@@ -1,98 +1,14 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./style.css";
+import "../App.css";
 
-const user = () => {
+function User() {
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                <div className="container-fluid navBackground">
-                    <img
-                        src="./assets/WalletWiz logo.png"
-                        className="logoP2"
-                        alt="WalletWiz header logo"
-                    />
-                    <a className="navbar-brand" href="#">
-                        WalletWhiz
-                    </a>
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">
-                                    Link
-                                </a>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a
-                                    className="nav-link dropdown-toggle"
-                                    href="#"
-                                    role="button"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                >
-                                    Dropdown
-                                </a>
-                                <ul className="dropdown-menu">
-                                    <li>
-                                        <a className="dropdown-item" href="#">
-                                            Action
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a className="dropdown-item" href="#">
-                                            Another action
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <hr className="dropdown-divider" />
-                                    </li>
-                                    <li>
-                                        <a className="dropdown-item" href="#">
-                                            Something else here
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link disabled" aria-disabled="true">
-                                    Disabled
-                                </a>
-                            </li>
-                        </ul>
-                        <form className="d-flex" role="search">
-                            <input
-                                className="form-control me-2"
-                                type="search"
-                                placeholder="Search"
-                                aria-label="Search"
-                            />
-                            <button className="btn btn-outline-success" type="submit">
-                                Search
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </nav>
+        <div className="userpage">
             <div className="container-fluid registerPage">
                 <h3 className="tagline">User Profile</h3>
                 <div className="displayCards">
-                    <h3 className="formBoxHeader">Link Bank Account</h3>
+                    <h3 className="cardHeader">Account Information</h3>
                     <div className="form-floating formInputs">
                         <input
                             type="email"
@@ -134,6 +50,7 @@ const user = () => {
                     </button>
                 </div>
             </div>
+            <div className="usertextbottom">
             <div className="container-fluid appFeaturesBox">
                 <h2 className="featuresHeader">
                     What does WalletWhiz have to offer you?
@@ -145,19 +62,18 @@ const user = () => {
                             accurately manage incoming and outgoing finances
                         </h3>
                     </div>
-                    <div className="line"></div>
                     <div className="container-fluid featuresTextBox">
                         <h3 className="featuresText">
                             WalletWhiz has tools to analyze your spending habits so you can
                             save more money for the things you want
                         </h3>
                     </div>
-                    <div className="line"></div>
                     <div className="container-fluid featuresTextBox">
                         <h3 className="featuresText">
                             WalletWhiz is made by people like you, for people like you. We
                             implemented features that we want to track our own finances
                         </h3>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -165,4 +81,4 @@ const user = () => {
     );
 };
 
-export default user;
+export default User;

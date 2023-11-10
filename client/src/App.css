@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Oswald:wght@200;400&display=swap');
+
+
+.navbar {
+    background-color: #46709d50;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header a {
+    font-family: 'Kanit', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.headerLogo {
+    display: flex;
+    height: 30px;
+    margin-left: 10%;
+    margin-right: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.listText {
+    display: inline-block;
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1.6px;
+    font-size: 16px;
+}
+
+.listText:hover {
+    cursor: pointer;
+}
+
+.listText::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+.listText:hover::after {
+    transform: scaleX(1);
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+    }
+
+    .listText {
+        margin: 1px 0;
+    }
+}
