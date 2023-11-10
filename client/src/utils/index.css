@@ -148,8 +148,27 @@ body {
     color: #afafaf;
 }
 
+
+.userpage {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 100px auto; 
+    width: 50%;
+}
+
+.usertextbottom {
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.formInputs {
+    margin: 30px auto; 
+
 @media only screen and (max-width: 600px) {
     .pageTextBox {
         display: none;
     }
+
 }

@@ -17,7 +17,7 @@
     align-items: center;
 }
 
-.navHeaderText {
+.header a {
     font-family: 'Kanit', sans-serif;
     font-size: 26px;
     font-weight: bold;
