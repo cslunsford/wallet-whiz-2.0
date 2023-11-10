@@ -4,6 +4,7 @@ import Homepage from "./Homepage";
 import user from "./user";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
+import ContactForm from './ContactForm';
 
 
 
