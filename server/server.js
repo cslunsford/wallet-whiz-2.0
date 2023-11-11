@@ -1,6 +1,5 @@
 require('dotenv').config({ debug: true });
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
@@ -22,14 +21,15 @@ const server = new ApolloServer({
 const startApolloServer = async () => {
     await server.start();
 
-    app.use(express.urlencoded({ extended: true }));
     app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
     app.use(cors());
-    app.use(bodyParser.json());
 
     app.use('/graphql', expressMiddleware(server, {
         context: authMiddleware
     }));
+
+    app.use(authMiddleware);
 
     if (process.env.NODE_ENV === 'production') {
         app.use(express.static(path.join(__dirname, '../client/dist')));

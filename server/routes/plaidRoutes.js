@@ -50,12 +50,13 @@ router.post('/exchange_public_token', authMiddleware, async function (
         });
         const accessToken = plaidResponse.data.access_token;
 
-        const userId = req.user.id;
+        const userId = req.user._id;
 
         await User.findOneAndUpdate({ _id: userId }, { plaidAccessToken: accessToken });
         res.json({ accessToken });
     } catch (err) {
         res.status(500).json(err);
+        console.log(err);
     }
 });
 
