@@ -43,7 +43,6 @@ const startApolloServer = async () => {
 
     db.once('open', () => {
         app.listen(PORT, () => console.log(`Now listenting on localhost:${PORT}`));
-        fetchData();
     });
 };
 
