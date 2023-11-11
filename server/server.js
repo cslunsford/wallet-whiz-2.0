@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 //Axios
 const axios = require('axios');
@@ -103,27 +104,27 @@ app.post('/exchange_public_token', async function (
         });
         // These values should be saved to a persistent database and
   
-        const accessToken = plaidResponse.data.access_token;
-        const user = await User.findByPk(request.session.user_id);
+//         const accessToken = plaidResponse.data.access_token;
+//         const user = await User.findByPk(request.session.user_id);
   
-        user.access_token = accessToken;
-        await user.save({ fields: ["access_token"] });
+//         user.access_token = accessToken;
+//         await user.save({ fields: ["access_token"] });
   
-        console.log('Miracle_access_token:', accessToken);
-        response.json({ accessToken });
-    } catch (error) {
-        response.status(500).send("failed");
-    }
-  });
+//         console.log('Miracle_access_token:', accessToken);
+//         response.json({ accessToken });
+//     } catch (error) {
+//         response.status(500).send("failed");
+//     }
+//   });
 
-  // PLAID Pull bank accounts -- Step 3
-app.get('/accounts', async function (request, response, next) {
-    try {
-      const user = await User.findByPk(request.session.user_id);
+//   // PLAID Pull bank accounts -- Step 3
+// app.get('/accounts', async function (request, response, next) {
+//     try {
+//       const user = await User.findByPk(request.session.user_id);
       
-      console.log(user.access_token)
-      const accountsResponse = await plaidClient.accountsGet({
-        access_token: user.access_token,
+//       console.log(user.access_token)
+//       const accountsResponse = await plaidClient.accountsGet({
+//         access_token: user.access_token,
       
       });
       prettyPrintResponse(accountsResponse);
@@ -166,4 +167,3 @@ async function fetchData() {
   }
 */
 startApolloServer();
-

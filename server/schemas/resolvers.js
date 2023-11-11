@@ -43,12 +43,12 @@ const resolvers = {
             return { token, user };
         },
         register: async (parent, { email, password }) => {
-            const user = await User.create({ email, password });
-            const token = signToken(user);
+                const user = await User.create({ email, password });
+                const token = signToken(user);
 
-            return { token, user };
+                return { token, user };
+            }
         }
     }
-}
 
 module.exports = resolvers;
