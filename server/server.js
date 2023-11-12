@@ -60,6 +60,9 @@ const configuration = new Configuration({
   });
   //this has to come after the configuration / plaid client init
   const plaidClient = new PlaidApi(configuration);
+  const app = express();
+  app.use(cors());
+  app.use(bodyParser.json());
   const { TransactionsSyncRequest } = require('plaid');
   let linkToken; //declare a variable to store the link token to export it to another file
 

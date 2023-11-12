@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/nav';
+import plaidApp from './components/plaid';
 import {
   ApolloClient,
   InMemoryCache,
@@ -37,6 +38,7 @@ function App() {
       <ThemeProvider theme={PageTheme}>
       <Navbar />
       <Outlet />
+      <plaidApp />
       </ThemeProvider>
     </ApolloProvider>
   );
