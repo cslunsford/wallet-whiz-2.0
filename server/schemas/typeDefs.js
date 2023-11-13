@@ -35,10 +35,16 @@ const typeDefs = `
         login(email: String!, password: String!): Auth
         register(email: String!, password: String!): Auth
         exchangePublicToken(publicToken: String!): AccessToken
+        fetchPlaidData: PlaidDataResult
     }
 
     type AccessToken {
         access_token: String
+    }
+
+    type PlaidDataResult {
+        savedAccounts: [Account]
+        savedTransactions: [Transaction]
     }
 `;
 

@@ -7,7 +7,6 @@ import { useMutation } from '@apollo/client';
 axios.defaults.baseURL = 'http://localhost:3001/api';
 
 function PlaidAuth({ publicToken }) {
-  const [account, setAccount] = useState();
   const [exchangePublicToken] = useMutation(EXCHANGE_PUBLIC_TOKEN);
 
   useEffect(() => {
@@ -21,13 +20,6 @@ function PlaidAuth({ publicToken }) {
     }
     fetchData();
   }, []);
-
-  return account && (
-    <>
-      <p>Account number: {account.account}</p>
-      <p>Routing number: {account.routing}</p>
-    </>
-  );
 }
 
 function PlaidButton () {
