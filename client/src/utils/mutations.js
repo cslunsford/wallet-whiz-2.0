@@ -31,3 +31,21 @@ export const EXCHANGE_PUBLIC_TOKEN = gql`
   }
 }
 `;
+
+export const FETCH_PLAID_DATA = gql`
+    mutation FetchPlaidData($accessToken: String!) {
+        fetchPlaidData(accessToken: $accessToken) {
+            savedAccounts {
+                _id
+                accountName
+                balance
+            }
+            savedTransactions {
+                _id
+                amount
+                merchantName
+                date
+            }
+        }
+    }
+`;
