@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Oswald:wght@200;400&display=swap');
 
-body {
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    width: 100%;
-    color: #fff;
-    background: linear-gradient(135deg, #2F3E9E, #7F2596);
-}
-
 .upperContainer {
     margin-top: 40px;
 }
@@ -201,16 +191,6 @@ body {
     height: 100vh;
 }
 
-.container {
-    width: 100%;
-    max-width: 500px;
-    background: white;
-    padding: 25px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-    opacity: 0.9;
-}
-
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -247,7 +227,9 @@ body {
     border-radius: 4px;
     color: white;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
+
 .contact-form .send-btn:hover {
     background: #4cae4c;
 }
@@ -303,7 +285,8 @@ footer {
     /* Space between sections */
 }
 
-footer .container {
+
+footer {
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -311,21 +294,22 @@ footer .container {
     flex-wrap: wrap;
 }
 
-footer .container .sec {
+
+footer .sec {
     flex: 1;
     /* Each section will take equal space */
     min-width: 250px;
     /* Minimum width for each section */
 }
 
-footer .container .sec h2 {
+footer .sec h2 {
     color: #fff;
     font-weight: 500;
     margin-bottom: 15px;
     position: relative;
 }
 
-footer .container .sec h2::before {
+footer .sec h2::before {
     content: '';
     position: absolute;
     left: 0;
@@ -402,12 +386,13 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    footer .container {
+    footer  {
         flex-direction: column;
         align-items: center;
     }
 
-    footer .container .sec {
+
+    footer .sec {
         width: 100%;
         text-align: center;
         /* Center text for mobile */

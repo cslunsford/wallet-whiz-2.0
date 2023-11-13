@@ -12,11 +12,22 @@ export const LOGIN_USER = gql`
     }
 `;
 
-export const REGISTER = gql `
+export const REGISTER = gql`
     mutation register($email: String!, $password: String!) {
         register(email: $email, password: $password) {
             token
-            user {}
+            user {
+                _id
+                email
+            }
         }
     }
+`;
+
+export const EXCHANGE_PUBLIC_TOKEN = gql`
+    mutation ExchangePublicToken($publicToken: String!) {
+     exchangePublicToken(publicToken: $publicToken) {
+     access_token
+  }
+}
 `;
