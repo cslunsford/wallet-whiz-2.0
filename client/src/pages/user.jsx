@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
+import PlaidButton from '../components/PlaidButton';
 
 function User() {
+    const [userId, setUserId] = useState(null);
+
     return (
-        <div className="userpage">
+        <div>
             <div className="container-fluid registerPage">
                 <h3 className="tagline">User Profile</h3>
                 <div className="displayCards">
@@ -45,9 +48,7 @@ function User() {
                             Routing #
                         </label>
                     </div>
-                    <button type="button" className="btn btn-primary btn-lg">
-                        Link
-                    </button>
+                    {<PlaidButton userId={userId} />}
                 </div>
             </div>
             <div className="usertextbottom">
