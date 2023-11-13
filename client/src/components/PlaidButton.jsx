@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { usePlaidLink } from 'react-plaid-link';
+import { EXCHANGE_PUBLIC_TOKEN } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
 
 axios.defaults.baseURL = 'http://localhost:3001/api';
 
 function PlaidAuth({ publicToken }) {
   const [account, setAccount] = useState();
+  const [exchangePublicToken] = useMutation(EXCHANGE_PUBLIC_TOKEN);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const accessToken = await axios.post('/exchange_public_token', { public_token: publicToken });
+        const accessToken = await exchangePublicToken({ variables: { publicToken }});
         console.log('accessToken', accessToken.data);
-        const auth = await axios.post('/auth', { access_token: accessToken.data.accessToken });
-        console.log('auth data ', auth.data);
-        setAccount(auth.data.numbers.ach[0]);
       } catch (error) {
         console.error(error);
       }

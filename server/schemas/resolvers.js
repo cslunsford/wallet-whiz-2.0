@@ -1,5 +1,6 @@
 const { User } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
+const plaidClient = require('../config/plaid');
 
 const resolvers = {
     Query: {
@@ -43,12 +44,34 @@ const resolvers = {
             return { token, user };
         },
         register: async (parent, { email, password }) => {
-                const user = await User.create({ email, password });
-                const token = signToken(user);
+            const user = await User.create({ email, password });
+            const token = signToken(user);
 
-                return { token, user };
+            return { token, user };
+        },
+        exchangePublicToken: async (parent, { publicToken }, context) => {
+            if (!context.user) {
+                throw AuthenticationError;
+            }
+
+            try {
+                const plaidResponse = await plaidClient.itemPublicTokenExchange({
+                    public_token: publicToken,
+                });
+
+                const accessToken = plaidResponse.data.access_token;
+
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { plaidAccessToken: accessToken }
+                );
+
+                return { access_token: accessToken };
+            } catch (err) {
+                throw new Error('Failed to exchange token.');
             }
         }
     }
+}
 
 module.exports = resolvers;

@@ -23,3 +23,11 @@ export const REGISTER = gql`
         }
     }
 `;
+
+export const EXCHANGE_PUBLIC_TOKEN = gql`
+    mutation ExchangePublicToken($publicToken: String!) {
+     exchangePublicToken(publicToken: $publicToken) {
+     access_token
+  }
+}
+`;
