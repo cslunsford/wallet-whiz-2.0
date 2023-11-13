@@ -34,6 +34,11 @@ const typeDefs = `
     type Mutation {
         login(email: String!, password: String!): Auth
         register(email: String!, password: String!): Auth
+        exchangePublicToken(publicToken: String!): AccessToken
+    }
+
+    type AccessToken {
+        access_token: String
     }
 `;
 

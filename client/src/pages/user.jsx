@@ -7,7 +7,7 @@ function User() {
     const [userId, setUserId] = useState(null);
 
     return (
-        <div>
+        <div className='userpage'>
             <div className="container-fluid registerPage">
                 <h3 className="tagline">User Profile</h3>
                 <div className="displayCards">
@@ -20,7 +20,7 @@ function User() {
                             name="email"
                             placeholder="name@example.com"
                         />
-                        <label className="formLabel" for="floatingInput">
+                        <label className="formLabel" htmlFor="floatingInput">
                             Bank Name
                         </label>
                     </div>
@@ -32,7 +32,7 @@ function User() {
                             name="password"
                             placeholder="Password"
                         />
-                        <label className="formLabel" for="floatingPassword">
+                        <label className="formLabel" htmlFor="floatingPassword">
                             Checking #
                         </label>
                     </div>
@@ -44,7 +44,7 @@ function User() {
                             name="passwordConfirm"
                             placeholder="Password"
                         />
-                        <label className="formLabel" for="floatingPassword">
+                        <label className="formLabel" htmlFor="floatingPassword">
                             Routing #
                         </label>
                     </div>

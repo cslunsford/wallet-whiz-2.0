@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
-const plaidClient = require('../config/plaid');
-const { authMiddleware } = require('../utils/auth');
+const plaidClient = require('../config/plaid.js');
 
 router.post('/create_link_token', async function (req, res) {
     const plaidRequest = {
@@ -25,39 +23,5 @@ router.post('/create_link_token', async function (req, res) {
     }
 });
 
-router.post('/auth', async function(req, res) {
-   try {
-       const access_token = req.body.access_token;
-       const plaidRequest = {
-           access_token: access_token,
-       };
-       const plaidResponse = await plaidClient.authGet(plaidRequest);
-       res.json(plaidResponse.data);
-   } catch (err) {
-       res.status(500).json(err);
-   }
-});
-
-router.post('/exchange_public_token', authMiddleware, async function (
-    req,
-    res,
-    next,
-) {
-    const publicToken = req.body.public_token;
-    try {
-        const plaidResponse = await plaidClient.itemPublicTokenExchange({
-            public_token: publicToken,
-        });
-        const accessToken = plaidResponse.data.access_token;
-
-        const userId = req.user._id;
-
-        await User.findOneAndUpdate({ _id: userId }, { plaidAccessToken: accessToken });
-        res.json({ accessToken });
-    } catch (err) {
-        res.status(500).json(err);
-        console.log(err);
-    }
-});
 
 module.exports = router;
