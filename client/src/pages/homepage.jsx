@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import LoginForm from '../components/LoginForm';
+import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 
 function homepage() {
@@ -25,9 +26,10 @@ function homepage() {
                         </div>
                         <div className="registerButtonBox">
                             <h3 className="registerHeader">Not yet managing your money? Register here</h3>
+                            {Auth.loggedIn() ? (null) : (
                             <Link to='/register'>
                             <Button variant="contained" disableElevation>Register</Button>
-                            </Link>
+                            </Link>)}
                         </div>
                     </div>
                 </div>

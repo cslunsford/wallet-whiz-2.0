@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import PlaidButton from '../components/PlaidButton';
-import { useMutation, useQuery } from '@apollo/client';
-import { FETCH_PLAID_DATA } from "../utils/mutations";
+import AccountButton from '../components/AccountButton';
+import { useQuery } from '@apollo/client';
 import { USER } from '../utils/queries';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -15,22 +15,8 @@ import Divider from '@mui/material/Divider';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
-
 function User() {
-    ;
-    const [fetchPlaidData] = useMutation(FETCH_PLAID_DATA);
     const { loading, error, data } = useQuery(USER);
-
-    useEffect(() => {
-        if (!loading && !error && data && data.user && data.user.plaidAccessToken) {
-            fetchPlaidData({
-                variables: {
-                    accessToken: data.user.plaidAccessToken
-                }
-            });
-        }
-    }, [loading, error, data]);
-
 
     return (
         <div className="container upperContainer">
@@ -63,6 +49,7 @@ function User() {
                             </ListItemAvatar>
                             <ListItemText primary="Account Created:" secondary="July 20, 2014" />
                         </ListItem>
+                    </List>
                         <Divider variant="inset"/>
                         <ListItem>
                             <ListItemAvatar>
@@ -74,7 +61,12 @@ function User() {
                         </ListItem>
                         <Divider variant="inset"/>
                     </div>
-                    <PlaidButton />
+                    {data && data.user && data.user.plaidAccessToken && (
+                        <AccountButton />
+                    )}
+                    {data && data.user && !data.user.plaidAccessToken && (
+                    <PlaidButton userId={data.user._id} />
+                )}
                 </div>
             </div>
         </div>

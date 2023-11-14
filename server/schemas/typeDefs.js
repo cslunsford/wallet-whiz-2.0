@@ -9,12 +9,14 @@ const typeDefs = `
 
     type Account {
         _id: ID
+        account_id: String
         accountName: String
         balance: Float
     }
 
     type Transaction {
         _id: ID
+        account_id: String
         amount: Float
         merchantName: String
         date: String

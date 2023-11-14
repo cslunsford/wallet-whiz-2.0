@@ -80,6 +80,7 @@ const resolvers = {
                     access_token: accessToken
                 });
                 const accounts = accountsResponse.data.accounts;
+                console.log(accounts);
 
                 const transactionsResponse = await plaidClient.transactionsGet({
                     access_token: accessToken,
@@ -87,12 +88,14 @@ const resolvers = {
                     end_date: formattedEndDate,
                 });
                 const transactions = transactionsResponse.data.transactions;
+                console.log(transactions);
 
                 const user = await User.findById(context.user._id);
 
                 const savedAccounts = await Promise.all(
                     accounts.map(async (account) => {
                         const plaidAccountData = {
+                            account_id: account.account_id,
                             accountName: account.name,
                             balance: account.balances.current,
                         };
@@ -103,6 +106,7 @@ const resolvers = {
                 const savedTransactions = await Promise.all(
                     transactions.map(async (transaction) => {
                         const plaidTransactionData = {
+                            account_id: transaction.account_id,
                             amount: transaction.amount,
                             merchantName: transaction.merchant_name,
                             date: transaction.date,
@@ -119,7 +123,11 @@ const resolvers = {
 
                 await user.save();
 
-                return user;
+                return {
+                    user,
+                    savedAccounts,
+                    savedTransactions,
+                };
             } catch (err) {
                 console.error(err);
                 throw new Error('Failed to retrieve Plaid data');
