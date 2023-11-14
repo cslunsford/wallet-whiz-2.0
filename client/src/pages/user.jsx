@@ -68,7 +68,16 @@ function User() {
                             </ListItemAvatar>
                             <ListItemText primary="Account Created:" secondary="July 20, 2014" />
                         </ListItem>
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                    <AccessTimeIcon />
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Linked Banks" secondary="N/A" />
+                        </ListItem>
                     </List>
+                    <PlaidButton />
                 </div>
             </div>
         </div>
