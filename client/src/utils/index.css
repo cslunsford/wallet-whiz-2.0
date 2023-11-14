@@ -31,6 +31,10 @@
     text-align: center;
 }
 
+.dashboardHeader {
+    font-size: 48px;
+}
+
 .cards {
     background: transparent;
     align-items: center;
@@ -76,12 +80,6 @@
     margin-bottom: 1rem;
 }
 
-.upperPage,
-.pageBox,
-.pageTextBox {
-    margin-bottom: 2rem;
-}
-
 .descriptionSubText {
     color: #ddd;
     font-family: 'oswald', 'sans-serif';
@@ -98,11 +96,30 @@
 }
 
 .transactionContainer {
-    margin: 20px;
+    margin-top: 20px;
 }
 
-.currSign:before {
-    content: '$';
+.transactionInner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.balanceContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+
+.balanceHeader {
+    font-family: 'kanit', sans-serif;
+    color: #fff;
+}
+
+.accountBalance {
+    text-align: center;
+    font-size: 42px;
 }
 
 .taglineBig {
