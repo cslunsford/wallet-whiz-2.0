@@ -1,5 +1,4 @@
 import React from "react";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import PlaidButton from '../components/PlaidButton';
@@ -25,6 +24,7 @@ function User() {
                 <div className="container registerPage">
                     <h3 className="tagline">User Profile</h3>
                     <div className="container">
+                        <List>
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
