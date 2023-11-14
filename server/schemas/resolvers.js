@@ -1,6 +1,7 @@
 const { User, Account, Transaction } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const plaidClient = require('../config/plaid');
+const { formattedStartDate, formattedEndDate } = require('../utils/date');
 
 const resolvers = {
     Query: {
@@ -71,38 +72,43 @@ const resolvers = {
                 throw new Error('Failed to exchange token.');
             }
         },
-        fetchPlaidData: async (parent, args, context) => {
+        fetchPlaidData: async (parent, { accessToken }, context) => {
             try {
                 const accountsResponse = await plaidClient.accountsGet({
-                    access_token: context.user.plaidAccessToken
+                    access_token: accessToken
                 });
                 const accounts = accountsResponse.data.accounts;
 
                 const transactionsResponse = await plaidClient.transactionsGet({
-                    access_token: context.user.plaidAccessToken,
+                    access_token: accessToken,
+                    start_date: formattedStartDate,
+                    end_date: formattedEndDate,
                 });
                 const transactions = transactionsResponse.data.transactions;
 
+                const user = await User.findById(context.user._id);
+
                 const savedAccounts = await Promise.all(
                     accounts.map(async (account) => {
-                        const newAccount = new Account({
+                        const plaidAccountData = {
                             accountName: account.name,
                             balance: account.balances.current,
-                        });
-                        return newAccount.save();
+                        };
+                        user.accounts.push(plaidAccountData);
                     })
                 );
 
                 const savedTransactions = await Promise.all(
                     transactions.map(async (transaction) => {
-                        const newTransaction = new Transaction({
+                        const plaidTransactionData = {
                             amount: transaction.amount,
                             merchantName: transaction.merchant_name,
                             date: transaction.date,
-                        });
-                        return newTransaction.save();
+                        };
+                        user.transactions.push(plaidTransactionData);
                     })
                 );
+                await user.save();
 
                 return {
                     savedAccounts,
