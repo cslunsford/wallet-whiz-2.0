@@ -28,6 +28,14 @@ function User() {
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Username:" secondary="Username Placeholder" />
+                        </ListItem>
+                        <Divider variant="inset"/>
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
                                     <AlternateEmailIcon />
                                 </Avatar>
                             </ListItemAvatar>
