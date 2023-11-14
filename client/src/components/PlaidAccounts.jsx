@@ -11,7 +11,7 @@ const PlaidAccounts = () => {
     if (error) return <p>Error: {error.message}</p>
 
     return (
-        <div className='card displayCards' id='balanceCard'>
+        <div className='cards displayCards' id='balanceCard'>
             {data.accounts.map((account) => (
                 <div className='container balanceContainer' id='balanceContainer' key={account._id}>
                     <h2 className='headerText balanceHeaders' id='savingsHeader'>{account.accountName}</h2>

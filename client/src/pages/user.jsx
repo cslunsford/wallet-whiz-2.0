@@ -12,6 +12,8 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar'; 
 import Divider from '@mui/material/Divider';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 
 function User() {
@@ -35,12 +37,7 @@ function User() {
             <div className='container'>
                 <div className="container registerPage">
                     <h3 className="tagline">User Profile</h3>
-                    <List
-                        sx={{
-                            width: '100%',
-                            bgcolor: 'rgba(255, 255, 255, 0.1)',
-                        }}
-                    >
+                    <div className="container">
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
@@ -48,23 +45,36 @@ function User() {
                             </ListItemAvatar>
                             <ListItemText primary="Username" secondary="Username Placeholder" />
                         </ListItem>
-                        <Divider variant="inset" component="li" />
+                        <Divider variant="inset"/>
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
+                                    <AlternateEmailIcon />
                                 </Avatar>
                             </ListItemAvatar>
                             <ListItemText primary="Email" secondary="Email Placeholder" />
                         </ListItem>
-                        <Divider variant="inset" component="li" />
+                        <Divider variant="inset"/>
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
+                                    <AccessTimeIcon />
                                 </Avatar>
                             </ListItemAvatar>
                             <ListItemText primary="Account Created:" secondary="July 20, 2014" />
                         </ListItem>
-                    </List>
+                        <Divider variant="inset"/>
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                    <AccessTimeIcon />
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Linked Banks" secondary="N/A" />
+                        </ListItem>
+                        <Divider variant="inset"/>
+                    </div>
+                    <PlaidButton />
                 </div>
             </div>
         </div>

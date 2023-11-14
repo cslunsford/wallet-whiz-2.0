@@ -3,6 +3,7 @@ import axios from 'axios';
 import { usePlaidLink } from 'react-plaid-link';
 import { EXCHANGE_PUBLIC_TOKEN } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
+import Button from '@mui/material/Button';
 
 axios.defaults.baseURL = 'http://localhost:3001/api';
 
@@ -47,9 +48,9 @@ function PlaidButton () {
   });
 
   return publicToken ? <PlaidAuth publicToken={publicToken} /> : (
-    <button className='btn btn-primary btn-lg' onClick={() => open()} disabled={!ready}>
+    <Button variant='contained' onClick={() => open()} disableElevation>
       Link Bank
-    </button>
+    </Button>
   );
 }
 
