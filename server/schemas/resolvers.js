@@ -108,7 +108,7 @@ const resolvers = {
                         const plaidTransactionData = {
                             account_id: transaction.account_id,
                             amount: transaction.amount,
-                            merchantName: transaction.merchant_name,
+                            merchantName: transaction.merchant_name || transaction.name,
                             date: transaction.date,
                         };
                         return plaidTransactionData;
