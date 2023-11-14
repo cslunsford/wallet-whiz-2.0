@@ -15,7 +15,14 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "^5.14.18",
+    "@mui/material": "^5.14.18",
     "axios": "^1.6.1",
-    "dotenv": "^8.6.0"
+    "dotenv": "^8.6.0",
+    "moment": "^2.29.4",
+    "react-currency-format": "^1.1.0"
   }
 }
