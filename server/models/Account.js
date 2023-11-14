@@ -1,5 +1,4 @@
 const { Schema } = require('mongoose');
-const transactionSchema = require('./Transactions');
 
 const accountSchema = new Schema({
     accountName: {
@@ -8,7 +7,6 @@ const accountSchema = new Schema({
     balance: {
         type: Number,
     },
-    transactions: [transactionSchema],
 });
 
 module.exports = accountSchema;

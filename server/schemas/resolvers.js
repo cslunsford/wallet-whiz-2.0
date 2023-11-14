@@ -1,12 +1,13 @@
-const { User } = require('../models');
+const { User, Account, Transaction } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const plaidClient = require('../config/plaid');
+const { formattedStartDate, formattedEndDate } = require('../utils/date');
 
 const resolvers = {
     Query: {
         user: async (parent, args, context) => {
             if (context.user) {
-                return User.findOne({ _id: context.user._id });
+                return User.findById(context.user._id).select('plaidAccessToken');
             } else {
                 throw AuthenticationError;
             }
@@ -69,6 +70,53 @@ const resolvers = {
                 return { access_token: accessToken };
             } catch (err) {
                 throw new Error('Failed to exchange token.');
+            }
+        },
+        fetchPlaidData: async (parent, { accessToken }, context) => {
+            try {
+                const accountsResponse = await plaidClient.accountsGet({
+                    access_token: accessToken
+                });
+                const accounts = accountsResponse.data.accounts;
+
+                const transactionsResponse = await plaidClient.transactionsGet({
+                    access_token: accessToken,
+                    start_date: formattedStartDate,
+                    end_date: formattedEndDate,
+                });
+                const transactions = transactionsResponse.data.transactions;
+
+                const user = await User.findById(context.user._id);
+
+                const savedAccounts = await Promise.all(
+                    accounts.map(async (account) => {
+                        const plaidAccountData = {
+                            accountName: account.name,
+                            balance: account.balances.current,
+                        };
+                        user.accounts.push(plaidAccountData);
+                    })
+                );
+
+                const savedTransactions = await Promise.all(
+                    transactions.map(async (transaction) => {
+                        const plaidTransactionData = {
+                            amount: transaction.amount,
+                            merchantName: transaction.merchant_name,
+                            date: transaction.date,
+                        };
+                        user.transactions.push(plaidTransactionData);
+                    })
+                );
+                await user.save();
+
+                return {
+                    savedAccounts,
+                    savedTransactions,
+                };
+            } catch (err) {
+                console.error(err);
+                throw new Error('Failed to retrieve Plaid data');
             }
         }
     }

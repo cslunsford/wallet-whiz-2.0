@@ -1,12 +1,26 @@
+import React, { useState, useEffect } from "react";
 
-import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import PlaidButton from '../components/PlaidButton';
+import { useMutation, useQuery } from '@apollo/client';
+import { FETCH_PLAID_DATA } from "../utils/mutations";
+import { USER } from '../utils/queries';
 
+function User() {;
+    const [fetchPlaidData] = useMutation(FETCH_PLAID_DATA);
+    const { loading, error, data } = useQuery(USER);
 
-function User() {
-    const [userId, setUserId] = useState(null);
+    useEffect(() => {
+        if (!loading && !error && data && data.user && data.user.plaidAccessToken) {
+            fetchPlaidData({
+                variables: {
+                    accessToken: data.user.plaidAccessToken
+                }
+            });
+        }
+    }, [loading, error, data]);
+
 
     return (
         <div className="container upperContainer">
@@ -51,7 +65,9 @@ function User() {
                             Routing #
                         </label>
                     </div>
-                    {<PlaidButton userId={userId} />}
+                    {data && data.user && !data.user.plaidAccessToken && (
+                    <PlaidButton userId={data.user._id} />
+                )}
                 </div>
             </div>
         </div>

@@ -4,13 +4,13 @@ const typeDefs = `
         email: String
         plaidAccessToken: String
         accounts: [Account]
+        transactions: [Transaction]
     }
 
     type Account {
         _id: ID
         accountName: String
         balance: Float
-        transactions: [Transaction]
     }
 
     type Transaction {
@@ -35,10 +35,16 @@ const typeDefs = `
         login(email: String!, password: String!): Auth
         register(email: String!, password: String!): Auth
         exchangePublicToken(publicToken: String!): AccessToken
+        fetchPlaidData(accessToken: String!): PlaidDataResult
     }
 
     type AccessToken {
         access_token: String
+    }
+
+    type PlaidDataResult {
+        savedAccounts: [Account]
+        savedTransactions: [Transaction]
     }
 `;
 
