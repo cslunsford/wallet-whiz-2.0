@@ -14,6 +14,7 @@ function PlaidAuth({ publicToken }) {
       try {
         const accessToken = await exchangePublicToken({ variables: { publicToken }});
         console.log('accessToken', accessToken.data);
+        window.location.reload();
       } catch (error) {
         console.error(error);
       }

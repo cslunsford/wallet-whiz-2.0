@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import LoginForm from '../components/LoginForm';
+import Auth from '../utils/auth';
 
 function homepage() {
     return (
@@ -24,7 +25,8 @@ function homepage() {
                         </div>
                         <div className="registerButtonBox">
                             <h3 className="registerHeader">Not yet managing your money? Register here</h3>
-                            <Button variant="contained" disableElevation>Register</Button>
+                            {Auth.loggedIn() ? (null) : (
+                            <Button variant="contained" disableElevation>Register</Button>)}
                         </div>
                     </div>
                 </div>
