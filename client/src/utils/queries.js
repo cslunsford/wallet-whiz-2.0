@@ -9,3 +9,13 @@ export const USER = gql`
         }
     }
 `;
+
+export const ACCOUNTS = gql`
+    query accounts {
+        accounts {
+            _id
+            accountName
+            balance
+        }
+    }
+`;

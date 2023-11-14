@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'; 
 
 import Button from '@mui/material/Button';
+import PlaidAccounts from '../components/PlaidAccounts';
 
 //import Chart from 'react-chartjs-2'; 
 
@@ -31,24 +32,7 @@ function Dashboard() {
         <div className="container pageInner">
           <div className="container balanceAlign">
           <h2 className="headerText dashboardHeader">Hello User!</h2>
-            <div className="card displayCards" id="balanceCard">
-              <h3 className="headerText" id="accountsHeader">
-                ACCOUNTS
-              </h3>
-              <div className="container balanceContainer" id="balanceContainer">
-                <div className="balanceBoxes">
-                  <h4 className="headerText balanceHeaders" id="savingsHeader">
-                    Savings Account
-                  </h4>
-                  <p className="headerText" id="savings">$5,000</p>
-                </div>
-                <div className="balanceBoxes">
-                  <h4 className="headerText balanceHeaders" id="checkingHeader">
-                    Checking Account
-                  </h4>
-                  <p className="headerText" id="checking">$2,500</p>
-                </div>
-              </div>
+                <PlaidAccounts />
             </div>
           </div>
           <div className="container transactionAlign">
@@ -99,7 +83,6 @@ function Dashboard() {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
