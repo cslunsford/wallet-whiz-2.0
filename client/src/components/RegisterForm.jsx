@@ -7,7 +7,7 @@ import { REGISTER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const RegisterForm = () => {
-    const [userFormData, setUserFormData] = useState({ email: '', password: '', confirmPassword: '' });
+    const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '', confirmPassword: '' });
     const [validated, setValidated] = useState(false);
     const [showError, setShowError] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
