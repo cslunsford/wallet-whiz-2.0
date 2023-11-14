@@ -60,6 +60,7 @@ function User() {
                             <UserAccounts />
                             </ListItem>
                         <Divider variant="inset"/>
+                        </List>
                     </div>
                     {data && data.user && data.user.plaidAccessToken && (
                         <AccountButton />
