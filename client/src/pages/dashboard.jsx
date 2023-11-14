@@ -39,25 +39,19 @@ function Dashboard() {
       <div className="container pageBox">
         <div className="container pageInner">
           <div className="container balanceAlign">
-          <h2 className="headerText dashboardHeader">Hello {data.user.email}!</h2>
-            <div className="cards" id="balanceCard">
+          <h2 className="headerText dashboardHeader">Hello User!</h2>
+            <div className="container">
               <h3 className="headerText" id="accountsHeader">
                 ACCOUNTS
-              </h3>
-              <div className="container balanceContainer" id="balanceContainer">
+              </h3>             
               <PlaidAccounts />
-              </div>
             </div>
           </div>
-          <div className="container transactionAlign">
-            <div className="cards" id="transactionCard">
-              <h2 className="headerText" id="history">
+          <div className="container">
+              <h2 className="headerText">
                 TRANSACTION HISTORY
               </h2>
-              <div className="transactionContainer" id="transactionContainer">
                 <PlaidTransactions />
-              </div>
-            </div>
           </div>
           <div className="container spendingAlign">
             <div className="cards" id="spendingCard">

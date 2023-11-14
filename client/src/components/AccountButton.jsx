@@ -2,6 +2,7 @@ import React from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { FETCH_PLAID_DATA } from '../utils/mutations';
 import { USER } from '../utils/queries';
+import Button from '@mui/material/Button';
 
 function AccountButton() {
     const [fetchPlaidData] = useMutation(FETCH_PLAID_DATA);
@@ -18,9 +19,9 @@ function AccountButton() {
     }
 
     return (
-        <button className='btn btn-primary btn-lg' onClick={handleButtonClick}>
+        <Button variant='contained' onClick={handleButtonClick} disableElevation>
             Update Account Data
-        </button>
+        </Button>
     );
 }
 

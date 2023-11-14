@@ -58,6 +58,19 @@ const RegisterForm = () => {
             {showError && <Alert variant='danger'>{errorMessage}</Alert>}
             <Form.Group>
             <TextField
+                    label='Username'
+                    margin='normal'
+                    variant='outlined'
+                    type='username'
+                    name='username'
+                    onChange={handleInputChange}
+                    value={userFormData.email}
+                    required
+                />
+                <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group>
+            <TextField
                     label='Email'
                     margin='normal'
                     variant='outlined'
