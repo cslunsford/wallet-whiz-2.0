@@ -4,6 +4,7 @@ export const USER = gql`
     query user {
         user {
             _id
+            username
             email
             plaidAccessToken
         }

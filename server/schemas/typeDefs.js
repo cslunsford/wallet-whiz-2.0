@@ -1,6 +1,7 @@
 const typeDefs = `
     type User {
         _id: ID
+        username: String
         email: String
         plaidAccessToken: String
         accounts: [Account]
@@ -35,7 +36,9 @@ const typeDefs = `
 
     type Mutation {
         login(email: String!, password: String!): Auth
-        register(email: String!, password: String!): Auth
+        register(username: String!, email: String!, password: String!): Auth
+        updateUsername(userId: ID!, username: String!): User
+        updateEmail(userId: ID!, email: String!): User
         exchangePublicToken(publicToken: String!): AccessToken
         fetchPlaidData(accessToken: String!): PlaidDataResult
     }

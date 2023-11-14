@@ -52,6 +52,12 @@ const resolvers = {
 
             return { token, user };
         },
+        updateUsername: async (parent, { userId, username }) => {
+            return User.findByIdAndUpdate(userId, { $set: { username } }, { new: true });
+        },
+        updateEmail: async (parent, { userId, email }) => {
+            return User.findByIdAndUpdate(userId, { $set: { email } }, { new: true });
+        },
         exchangePublicToken: async (parent, { publicToken }, context) => {
             if (!context.user) {
                 throw AuthenticationError;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { FETCH_PLAID_DATA } from '../utils/mutations';
 import { USER } from '../utils/queries';

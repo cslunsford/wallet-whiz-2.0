@@ -15,8 +15,8 @@ const PlaidTransactions = () => {
     return (
         <div>
             {data.transactions.map((transaction) => (
-                <div className='container transactionContainer'>
-                    <div key={transaction._id}>
+                <div className='container transactionContainer' key={transaction._id}>
+                    <div className='transactionInner'>
                     <h2>{transaction.merchantName}</h2>
                     <CurrencyFormat displayType={'text'} thousandSeparator={true} prefix={'$'} decimalSeparator='.' decimalScale={2} fixedDecimalScale={true} value={transaction.amount}/>
                     <p>{transaction.date}</p>
