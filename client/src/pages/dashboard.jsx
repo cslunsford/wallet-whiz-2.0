@@ -3,6 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'; 
 
 import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar'; 
+import Divider from '@mui/material/Divider';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+
 
 //import Chart from 'react-chartjs-2'; 
 
@@ -31,7 +40,7 @@ function Dashboard() {
         <div className="container pageInner">
           <div className="container balanceAlign">
           <h2 className="headerText dashboardHeader">Hello User!</h2>
-            <div className="card displayCards" id="balanceCard">
+            <div className="cards" id="balanceCard">
               <h3 className="headerText" id="accountsHeader">
                 ACCOUNTS
               </h3>
@@ -52,33 +61,30 @@ function Dashboard() {
             </div>
           </div>
           <div className="container transactionAlign">
-            <div className="card displayCards" id="transactionCard">
+            <div className="cards" id="transactionCard">
               <h2 className="headerText" id="history">
                 TRANSACTION HISTORY
               </h2>
               <div className="transactionContainer" id="transactionContainer">
+                <List>
                 {transactions.map((transaction, index) => (
-                  <div key={index} className="transactionDisplays">
-                    <div className="transactionDescriptionAlign">
-                      <h3 className="headerText transactionCompany">
-                        {transaction.company}
-                      </h3>
-                      <h3 className="headerText transactionDate">
-                        {transaction.date}
-                      </h3>
-                    </div>
-                    <div className="transactionAmountAlign">
-                      <h3 className="headerText transactionAmount">
-                        {transaction.amount}
-                      </h3>
-                    </div>
-                  </div>
+                  <List>
+                  <ListItem>
+                  <ListItemAvatar>
+                      <Avatar>
+                      </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="Username" secondary="Username Placeholder" />
+              </ListItem>
+              <Divider variant="inset" component="li" />
+              </List>
                 ))}
+                </List>
               </div>
             </div>
           </div>
           <div className="container spendingAlign">
-            <div className="card displayCards" id="spendingCard">
+            <div className="cards" id="spendingCard">
               <h2 className="headerText" id="spending">
                 MONTHLY SPENDING
               </h2>

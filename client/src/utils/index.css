@@ -31,10 +31,9 @@
     text-align: center;
 }
 
-.card {
+.cards {
     background: transparent;
     align-items: center;
-    border: 1px solid #fff;
     border-radius: 0.5rem;
     padding: 2.5rem;
 }

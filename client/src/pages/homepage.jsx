@@ -18,7 +18,7 @@ function homepage() {
                 <div className="container loginBoxesContainer">
                     <div className="formBoxAlign">
                         <h3 className="tagline">Already a user?</h3>
-                        <div className="card" id="loginBox">
+                        <div className="cards" id="loginBox">
                             <h3 className="formBoxHeader">Login</h3>
                             <LoginForm />
                         </div>

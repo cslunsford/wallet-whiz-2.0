@@ -55,7 +55,7 @@ const LoginForm = () => {
     };
 
     return (
-        <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='container'>
             {showError && <Alert variant='danger'>{errorMessage}</Alert>}
             <Form.Group>
                 <TextField
@@ -77,7 +77,6 @@ const LoginForm = () => {
                     margin='normal'
                     variant='outlined'
                     type='password'
-                    placeholder='Please enter your password!'
                     name='password'
                     onChange={handleInputChange}
                     value={userFormData.password}

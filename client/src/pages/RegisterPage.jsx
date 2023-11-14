@@ -8,9 +8,10 @@ const RegisterPage = () => {
         <div className="container">
           <div className="registerPage">
             <h3 className="tagline">Welcome to the Future of Finance</h3>
-            <h4 className="taglineSubtext mb-4">Take control of your finances now</h4>
-            <div className="formBoxHeader">Register</div>
+            <div className='cards'>
+            <h3 className="formBoxHeader">Register</h3>
             <RegisterForm />
+            </div>
           </div>
       </div>
     </div>

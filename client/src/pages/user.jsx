@@ -12,6 +12,8 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar'; 
 import Divider from '@mui/material/Divider';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 
 function User() {
@@ -52,6 +54,7 @@ function User() {
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
+                                    <AlternateEmailIcon />
                                 </Avatar>
                             </ListItemAvatar>
                             <ListItemText primary="Email" secondary="Email Placeholder" />
@@ -60,6 +63,7 @@ function User() {
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
+                                    <AccessTimeIcon />
                                 </Avatar>
                             </ListItemAvatar>
                             <ListItemText primary="Account Created:" secondary="July 20, 2014" />

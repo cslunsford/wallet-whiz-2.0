@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Form, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
-
+import Button from '@mui/material/Button'; 
+import { TextField } from '@mui/material';
 import { REGISTER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
@@ -53,13 +54,14 @@ const RegisterForm = () => {
     };
 
     return (
-        <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='container'>
             {showError && <Alert variant='danger'>{errorMessage}</Alert>}
-            <Form.Group className='mb-3'>
-                <Form.Label>Email:</Form.Label>
-                <Form.Control
+            <Form.Group>
+            <TextField
+                    label='Email'
+                    margin='normal'
+                    variant='outlined'
                     type='email'
-                    placeholder='Please enter your email!'
                     name='email'
                     onChange={handleInputChange}
                     value={userFormData.email}
@@ -68,11 +70,12 @@ const RegisterForm = () => {
                 <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group className='mb-3'>
-                <Form.Label>Password:</Form.Label>
-                <Form.Control
+            <Form.Group>
+            <TextField
+                    label='Password'
+                    margin='normal'
+                    variant='outlined'
                     type='password'
-                    placeholder='Please enter your password!'
                     name='password'
                     onChange={handleInputChange}
                     value={userFormData.password}
@@ -81,11 +84,12 @@ const RegisterForm = () => {
                 <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group className='mb-3'>
-                <Form.Label>Confirm Password:</Form.Label>
-                <Form.Control
+            <Form.Group>
+            <TextField
+                    label='Confirm Password'
+                    margin='normal'
+                    variant='outlined'
                     type='password'
-                    placeholder='Please confirm your password!'
                     name='confirmPassword'
                     onChange={handleInputChange}
                     value={userFormData.confirmPassword}
@@ -95,8 +99,9 @@ const RegisterForm = () => {
             </Form.Group>
 
             <Button
-                className='btn btn-primary btn-lg btn-block'
                 disabled={(!userFormData.email && userFormData.password && userFormData.confirmPassword)}
+                variant='contained'
+                disableElevation
                 type='submit'
             >
                 Submit
