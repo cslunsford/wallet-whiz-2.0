@@ -6,53 +6,51 @@ import PlaidButton from '../components/PlaidButton';
 import AccountButton from '../components/AccountButton';
 import { useQuery } from '@apollo/client';
 import { USER } from '../utils/queries';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar'; 
+import Divider from '@mui/material/Divider';
 
-function User() {;
+function User() {
     const { loading, error, data } = useQuery(USER);
 
     return (
         <div className="container upperContainer">
-        <div className='container'>
-            <div className="container registerPage">
-                <h3 className="tagline">User Profile</h3>
-                <div className="displayCards">
-                    <h3 className="cardHeader">Account Information</h3>
-                    <div className="form-floating formInputs">
-                        <input
-                            type="email"
-                            className="form-control"
-                            id="registerEmail"
-                            name="email"
-                            placeholder="name@example.com"
-                        />
-                        <label className="formLabel" htmlFor="floatingInput">
-                            Bank Name
-                        </label>
-                    </div>
-                    <div className="form-floating formInputs">
-                        <input
-                            type="password"
-                            className="form-control"
-                            id="registerPassword"
-                            name="password"
-                            placeholder="Password"
-                        />
-                        <label className="formLabel" htmlFor="floatingPassword">
-                            Checking #
-                        </label>
-                    </div>
-                    <div className="form-floating formInputs">
-                        <input
-                            type="password"
-                            className="form-control"
-                            id="repeatPassword"
-                            name="passwordConfirm"
-                            placeholder="Password"
-                        />
-                        <label className="formLabel" htmlFor="floatingPassword">
-                            Routing #
-                        </label>
-                    </div>
+            <div className='container'>
+                <div className="container registerPage">
+                    <h3 className="tagline">User Profile</h3>
+                    <List
+                        sx={{
+                            width: '100%',
+                            bgcolor: 'rgba(255, 255, 255, 0.1)',
+                        }}
+                    >
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Username" secondary="Username Placeholder" />
+                        </ListItem>
+                        <Divider variant="inset" component="li" />
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Email" secondary="Email Placeholder" />
+                        </ListItem>
+                        <Divider variant="inset" component="li" />
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Account Created:" secondary="July 20, 2014" />
+                        </ListItem>
+                    </List>
                     {data && data.user && data.user.plaidAccessToken && (
                         <AccountButton />
                     )}
@@ -61,7 +59,6 @@ function User() {;
                 )}
                 </div>
             </div>
-        </div>
         </div>
     );
 };
