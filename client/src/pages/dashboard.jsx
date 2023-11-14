@@ -3,6 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'; 
 
 import Button from '@mui/material/Button';
+import PlaidAccounts from '../components/PlaidAccounts';
+import PlaidTransactions from '../components/PlaidTransactions';
+
 
 //import Chart from 'react-chartjs-2'; 
 
@@ -31,7 +34,7 @@ function Dashboard() {
         <div className="container pageInner">
           <div className="container balanceAlign">
           <h2 className="headerText dashboardHeader">Hello User!</h2>
-            <div className="card displayCards" id="balanceCard">
+            <div className="cards" id="balanceCard">
               <h3 className="headerText" id="accountsHeader">
                 ACCOUNTS
               </h3>
@@ -58,23 +61,6 @@ function Dashboard() {
               </h2>
               <div className="transactionContainer" id="transactionContainer">
                 <PlaidTransactions />
-                {transactions.map((transaction, index) => (
-                  <div key={index} className="transactionDisplays">
-                    <div className="transactionDescriptionAlign">
-                      <h3 className="headerText transactionCompany">
-                        {transaction.company}
-                      </h3>
-                      <h3 className="headerText transactionDate">
-                        {transaction.date}
-                      </h3>
-                    </div>
-                    <div className="transactionAmountAlign">
-                      <h3 className="headerText transactionAmount">
-                        {transaction.amount}
-                      </h3>
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           </div>

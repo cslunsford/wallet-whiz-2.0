@@ -13,13 +13,15 @@ const Navbar = () => {
         </div>
         <ul className="nav-links">
             <li><Link className="listText" to="/">Login</Link></li>
-            <li><Link className="listText" to="/dashboard">Home</Link></li>
             <li><Link className="listText" to="/register">Register</Link></li>
-            <li><Link className="listText" to="/user">Account</Link></li>
+            </ul>
             {Auth.loggedIn() ? (
+                <ul className='nav-links'>
+                <li><Link className="listText" to="/dashboard">Home</Link></li>
+                <li><Link className="listText" to="/user">Account</Link></li>
                 <li><Link className='listText' onClick={Auth.logout}>Logout</Link></li>
+                </ul>
             ) : null}
-        </ul>
     </nav>
     );
 };
