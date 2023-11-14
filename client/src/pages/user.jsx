@@ -37,12 +37,7 @@ function User() {
             <div className='container'>
                 <div className="container registerPage">
                     <h3 className="tagline">User Profile</h3>
-                    <List
-                        sx={{
-                            width: '100%',
-                            bgcolor: 'rgba(255, 255, 255, 0.1)',
-                        }}
-                    >
+                    <div className="container">
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
@@ -50,7 +45,7 @@ function User() {
                             </ListItemAvatar>
                             <ListItemText primary="Username" secondary="Username Placeholder" />
                         </ListItem>
-                        <Divider variant="inset" component="li" />
+                        <Divider variant="inset"/>
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
@@ -59,7 +54,7 @@ function User() {
                             </ListItemAvatar>
                             <ListItemText primary="Email" secondary="Email Placeholder" />
                         </ListItem>
-                        <Divider variant="inset" component="li" />
+                        <Divider variant="inset"/>
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
@@ -68,6 +63,7 @@ function User() {
                             </ListItemAvatar>
                             <ListItemText primary="Account Created:" secondary="July 20, 2014" />
                         </ListItem>
+                        <Divider variant="inset"/>
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
@@ -76,7 +72,8 @@ function User() {
                             </ListItemAvatar>
                             <ListItemText primary="Linked Banks" secondary="N/A" />
                         </ListItem>
-                    </List>
+                        <Divider variant="inset"/>
+                    </div>
                     <PlaidButton />
                 </div>
             </div>

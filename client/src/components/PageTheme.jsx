@@ -16,6 +16,13 @@ export const PageTheme = createTheme({
                 }
             }
         },
+        MuiDivider: {
+          styleOverrides: {
+            root: {
+              backgroundColor: '#fff',
+            }
+          },
+        },
         MuiTextField: {
             styleOverrides: {
                 notchedOutline: {

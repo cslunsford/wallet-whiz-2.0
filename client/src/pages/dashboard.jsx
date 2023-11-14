@@ -39,18 +39,7 @@ function Dashboard() {
                 ACCOUNTS
               </h3>
               <div className="container balanceContainer" id="balanceContainer">
-                <div className="balanceBoxes">
-                  <h4 className="headerText balanceHeaders" id="savingsHeader">
-                    Savings Account
-                  </h4>
-                  <p className="headerText" id="savings">$5,000</p>
-                </div>
-                <div className="balanceBoxes">
-                  <h4 className="headerText balanceHeaders" id="checkingHeader">
-                    Checking Account
-                  </h4>
-                  <p className="headerText" id="checking">$2,500</p>
-                </div>
+              <PlaidAccounts />
               </div>
             </div>
           </div>
@@ -80,9 +69,6 @@ function Dashboard() {
                 /> */ }
               </div>
             </div>
-        <div className="linkButtonAlign">
-          <Button variant='contained' disableElevation>Link Account</Button>
-        </div>
           </div>
         </div>
       </div>
