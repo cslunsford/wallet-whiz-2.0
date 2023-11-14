@@ -4,6 +4,7 @@ import '../App.css';
 
 import Button from '@mui/material/Button';
 import PlaidAccounts from '../components/PlaidAccounts';
+import PlaidTransactions from '../components/PlaidTransactions';
 
 //import Chart from 'react-chartjs-2'; 
 
@@ -41,6 +42,7 @@ function Dashboard() {
                 TRANSACTION HISTORY
               </h2>
               <div className="transactionContainer" id="transactionContainer">
+                <PlaidTransactions />
                 {transactions.map((transaction, index) => (
                   <div key={index} className="transactionDisplays">
                     <div className="transactionDescriptionAlign">

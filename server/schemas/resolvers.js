@@ -22,7 +22,8 @@ const resolvers = {
         },
         transactions: async (parent, args, context) => {
             if (context.user) {
-                return Transaction.find({ userId: context.user._id });
+                const user = await User.findById(context.user._id).populate('transactions');
+                return user.transactions;
             } else {
                 throw AuthenticationError;
             }

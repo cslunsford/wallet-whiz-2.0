@@ -19,3 +19,14 @@ export const ACCOUNTS = gql`
         }
     }
 `;
+
+export const TRANSACTIONS = gql`
+    query transactions {
+        transactions {
+            _id
+            amount
+            merchantName
+            date
+        }
+    }
+`;
