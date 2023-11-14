@@ -16,11 +16,12 @@ const PlaidTransactions = () => {
         <div>
             {data.transactions.map((transaction) => (
                 <div className='container transactionContainer'>
-                    <div key={transaction._id}>
+                    <div className='transactionInner' key={transaction._id}>
+                        <div>
                     <h2>{transaction.merchantName}</h2>
                     <CurrencyFormat displayType={'text'} thousandSeparator={true} prefix={'$'} decimalSeparator='.' decimalScale={2} fixedDecimalScale={true} value={transaction.amount}/>
-                    <p>{moment(transaction.date).format('yyyy mm dd')}</p>
-                    <p>{transaction.date}</p>
+                        </div>
+                    <p>{moment(transaction.date).format('MMMM Do YYYY')}</p>
                     </div>
                     <Divider/>
                 </div>
