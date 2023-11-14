@@ -59,18 +59,22 @@ function Dashboard() {
               <div className="transactionContainer" id="transactionContainer">
                 <PlaidTransactions />
                 {transactions.map((transaction, index) => (
-                  <List>
-                  <ListItem>
-                  <ListItemAvatar>
-                      <Avatar>
-                      </Avatar>
-                  </ListItemAvatar>
-                  <ListItemText primary="Username" secondary="Username Placeholder" />
-              </ListItem>
-              <Divider variant="inset" component="li" />
-              </List>
+                  <div key={index} className="transactionDisplays">
+                    <div className="transactionDescriptionAlign">
+                      <h3 className="headerText transactionCompany">
+                        {transaction.company}
+                      </h3>
+                      <h3 className="headerText transactionDate">
+                        {transaction.date}
+                      </h3>
+                    </div>
+                    <div className="transactionAmountAlign">
+                      <h3 className="headerText transactionAmount">
+                        {transaction.amount}
+                      </h3>
+                    </div>
+                  </div>
                 ))}
-                </List>
               </div>
             </div>
           </div>
@@ -95,6 +99,7 @@ function Dashboard() {
         </div>
           </div>
         </div>
+      </div>
       </div>
   );
 };
