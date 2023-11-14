@@ -3,15 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'; 
 
 import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar'; 
-import Divider from '@mui/material/Divider';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-
 
 //import Chart from 'react-chartjs-2'; 
 
@@ -40,7 +31,7 @@ function Dashboard() {
         <div className="container pageInner">
           <div className="container balanceAlign">
           <h2 className="headerText dashboardHeader">Hello User!</h2>
-            <div className="cards" id="balanceCard">
+            <div className="card displayCards" id="balanceCard">
               <h3 className="headerText" id="accountsHeader">
                 ACCOUNTS
               </h3>
@@ -66,7 +57,7 @@ function Dashboard() {
                 TRANSACTION HISTORY
               </h2>
               <div className="transactionContainer" id="transactionContainer">
-                <List>
+                <PlaidTransactions />
                 {transactions.map((transaction, index) => (
                   <List>
                   <ListItem>
@@ -105,7 +96,6 @@ function Dashboard() {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

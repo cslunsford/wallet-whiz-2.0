@@ -14,14 +14,16 @@ const resolvers = {
         },
         accounts: async (parent, args, context) => {
             if (context.user) {
-                return Account.find({ userId: context.user._id });
+                const user = await User.findById(context.user._id).populate('accounts');
+                return user.accounts;
             } else {
                 throw AuthenticationError;
             }
         },
         transactions: async (parent, args, context) => {
             if (context.user) {
-                return Transaction.find({ userId: context.user._id });
+                const user = await User.findById(context.user._id).populate('transactions');
+                return user.transactions;
             } else {
                 throw AuthenticationError;
             }
@@ -94,7 +96,7 @@ const resolvers = {
                             accountName: account.name,
                             balance: account.balances.current,
                         };
-                        user.accounts.push(plaidAccountData);
+                        return plaidAccountData;
                     })
                 );
 
@@ -105,15 +107,19 @@ const resolvers = {
                             merchantName: transaction.merchant_name,
                             date: transaction.date,
                         };
-                        user.transactions.push(plaidTransactionData);
+                        return plaidTransactionData;
                     })
                 );
+
+                user.accounts = [];
+                user.transactions = [];
+
+                user.accounts = [...savedAccounts];
+                user.transactions = [...savedTransactions];
+
                 await user.save();
 
-                return {
-                    savedAccounts,
-                    savedTransactions,
-                };
+                return user;
             } catch (err) {
                 console.error(err);
                 throw new Error('Failed to retrieve Plaid data');
