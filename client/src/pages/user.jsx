@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import PlaidButton from '../components/PlaidButton';
 import AccountButton from '../components/AccountButton';
+import UserAccounts from "../components/accountsUserPage";
 import { useQuery } from '@apollo/client';
-import { USER } from '../utils/queries';
-import List from '@mui/material/List';
+import { ACCOUNTS } from '../utils/queries';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
@@ -16,7 +16,8 @@ import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 function User() {
-    const { loading, error, data } = useQuery(USER);
+    const { loading, error, data } = useQuery(ACCOUNTS);
+    
 
     return (
         <div className="container upperContainer">
@@ -27,18 +28,10 @@ function User() {
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
-                                </Avatar>
-                            </ListItemAvatar>
-                            <ListItemText primary="Username" secondary="Username Placeholder" />
-                        </ListItem>
-                        <Divider variant="inset"/>
-                        <ListItem>
-                            <ListItemAvatar>
-                                <Avatar>
                                     <AlternateEmailIcon />
                                 </Avatar>
                             </ListItemAvatar>
-                            <ListItemText primary="Email" secondary="Email Placeholder" />
+                            <ListItemText primary="Email:" secondary='' />
                         </ListItem>
                         <Divider variant="inset"/>
                         <ListItem>
@@ -56,8 +49,8 @@ function User() {
                                     <AccessTimeIcon />
                                 </Avatar>
                             </ListItemAvatar>
-                            <ListItemText primary="Linked Banks" secondary="N/A" />
-                        </ListItem>
+                            <UserAccounts />
+                            </ListItem>
                         <Divider variant="inset"/>
                     </div>
                     {data && data.user && data.user.plaidAccessToken && (
