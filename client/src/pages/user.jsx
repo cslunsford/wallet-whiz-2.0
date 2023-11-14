@@ -49,7 +49,6 @@ function User() {
                             </ListItemAvatar>
                             <ListItemText primary="Account Created:" secondary="July 20, 2014" />
                         </ListItem>
-                    </List>
                         <Divider variant="inset"/>
                         <ListItem>
                             <ListItemAvatar>
