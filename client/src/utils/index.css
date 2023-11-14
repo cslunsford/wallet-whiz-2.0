@@ -244,11 +244,9 @@
 
 
 body {
-   
-
     min-height: 100vh;
     background: linear-gradient(135deg, #2F3E9E 0%, #7F2596 100%);
-    padding: 4rem;
+    padding: 0;
     color: #fff;
     width: 100vw;
     /* Default text color set to white for all child elements */

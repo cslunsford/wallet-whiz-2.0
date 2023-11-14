@@ -6,8 +6,16 @@ import PlaidButton from '../components/PlaidButton';
 import { useMutation, useQuery } from '@apollo/client';
 import { FETCH_PLAID_DATA } from "../utils/mutations";
 import { USER } from '../utils/queries';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar'; 
+import Divider from '@mui/material/Divider';
 
-function User() {;
+
+function User() {
+    ;
     const [fetchPlaidData] = useMutation(FETCH_PLAID_DATA);
     const { loading, error, data } = useQuery(USER);
 
@@ -24,53 +32,41 @@ function User() {;
 
     return (
         <div className="container upperContainer">
-        <div className='container'>
-            <div className="container registerPage">
-                <h3 className="tagline">User Profile</h3>
-                <div className="displayCards">
-                    <h3 className="cardHeader">Account Information</h3>
-                    <div className="form-floating formInputs">
-                        <input
-                            type="email"
-                            className="form-control"
-                            id="registerEmail"
-                            name="email"
-                            placeholder="name@example.com"
-                        />
-                        <label className="formLabel" htmlFor="floatingInput">
-                            Bank Name
-                        </label>
-                    </div>
-                    <div className="form-floating formInputs">
-                        <input
-                            type="password"
-                            className="form-control"
-                            id="registerPassword"
-                            name="password"
-                            placeholder="Password"
-                        />
-                        <label className="formLabel" htmlFor="floatingPassword">
-                            Checking #
-                        </label>
-                    </div>
-                    <div className="form-floating formInputs">
-                        <input
-                            type="password"
-                            className="form-control"
-                            id="repeatPassword"
-                            name="passwordConfirm"
-                            placeholder="Password"
-                        />
-                        <label className="formLabel" htmlFor="floatingPassword">
-                            Routing #
-                        </label>
-                    </div>
-                    {data && data.user && !data.user.plaidAccessToken && (
-                    <PlaidButton userId={data.user._id} />
-                )}
+            <div className='container'>
+                <div className="container registerPage">
+                    <h3 className="tagline">User Profile</h3>
+                    <List
+                        sx={{
+                            width: '100%',
+                            bgcolor: 'rgba(255, 255, 255, 0.1)',
+                        }}
+                    >
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Username" secondary="Username Placeholder" />
+                        </ListItem>
+                        <Divider variant="inset" component="li" />
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Email" secondary="Email Placeholder" />
+                        </ListItem>
+                        <Divider variant="inset" component="li" />
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Account Created:" secondary="July 20, 2014" />
+                        </ListItem>
+                    </List>
                 </div>
             </div>
-        </div>
         </div>
     );
 };
