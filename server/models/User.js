@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 const accountSchema = require('./Account');
+const transactionSchema = require('./Transactions');
 
 const userSchema = new Schema(
     {
@@ -18,6 +19,7 @@ const userSchema = new Schema(
             type: String,
         },
         accounts: [accountSchema],
+        transactions: [transactionSchema],
     }
 );
 
