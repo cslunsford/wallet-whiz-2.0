@@ -28,7 +28,7 @@ const UserAccounts = () => {
                         <Avatar>
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary={`Username: ${user.username}`} secondary={user.username} />
+                    <ListItemText primary='Username:' secondary={user.username} />
                 </ListItem>
                 <Divider variant="inset" />
                 <ListItem>
