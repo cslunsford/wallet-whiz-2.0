@@ -15,7 +15,7 @@ function Dashboard() {
 
   return (
     <div>
-      <div className="container pageBox">
+      <div className="container" id='pageBox'>
         <div className="container pageInner">
           <div className="container balanceAlign">
           <h2 className="headerText dashboardHeader">Hello User!</h2>
@@ -32,16 +32,14 @@ function Dashboard() {
               </h2>
                 <PlaidTransactions />
           </div>
-          <div className="container spendingAlign">
-            <div className="cards" id="spendingCard">
-              <h2 className="headerText" id="spending">
+        </div>
+        <div className='container' id='spendingOuter'>
+        <div className='container' id='spendingContainer'>
+        <h2 className="headerText" id="spending">
                 MONTHLY SPENDING
               </h2>
-              <div className="spendingChart">
                 <SpendingChart />
-              </div>
-            </div>
-          </div>
+        </div>
         </div>
       </div>
       </div>

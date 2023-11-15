@@ -9,8 +9,7 @@ import { USER } from '../utils/queries';
 import ChangeUserProfile from "../components/ChangeUserProfile";
 
 function User() {
-    const { loading, error, data } = useQuery(USER);
-    
+    const { loading, error, data} = useQuery(USER);
 
     return (
         <div className="container upperContainer">
