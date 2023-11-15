@@ -34,9 +34,6 @@ const SpendingChart = () => {
     return (
         <div className="container spendingChart">
             <Doughnut data={chartData} 
-            options={{ maintainAspectRatio: false,
-            aspectRatio: 1 
-        }}
             />
         </div>
     );
