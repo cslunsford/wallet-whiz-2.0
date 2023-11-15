@@ -6,6 +6,15 @@
     margin-top: 40px;
 }
 
+#pageBox {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-top: 10px;
+    max-width: 14000px;
+    width: fit-content;
+}
+
 .container {
     padding: 2rem;
     align-items: center;
@@ -15,14 +24,18 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
-.upperContainer {
-    margin-top: 80px;
+.spendingChart {
+    display: flex;
+    max-width: 500px;
+    max-height: 600px;
 }
 
-.pageBox {
-    margin-top: 10px;
-    max-width: 900px;
-    width: 100%;
+#spendingContainer {
+    width: fit-content;
+}
+
+#spendingOuter {
+    width: fit-content;
 }
 
 .headerText {
@@ -189,8 +202,20 @@ input:-webkit-autofill,
         display: none;
     }
 
+    .spendingChart {
+        display: flex;
+        max-width: 300px;
+        max-height: 400px;
+    }
+
 }
 
+@media only screen and (max-width: 1220px) {
+    #pageBox {
+        flex-direction: column;
+    }
+
+}
 
 
 .contact-form {
@@ -423,4 +448,8 @@ footer p {
 .sec.developers {
     padding-left: 100px;
 
+}
+
+@media (max-width: 1100px) {
+    
 }
