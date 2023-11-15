@@ -7,7 +7,7 @@ const resolvers = {
     Query: {
         user: async (parent, args, context) => {
             if (context.user) {
-                return User.findById(context.user._id).select('plaidAccessToken');
+                return User.findById(context.user._id).select('username email createdAt plaidAccessToken');
             } else {
                 throw AuthenticationError;
             }
@@ -46,8 +46,8 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        register: async (parent, { email, password }) => {
-            const user = await User.create({ email, password });
+        register: async (parent, { username, email, password, createdAt }) => {
+            const user = await User.create({ username, email, password, createdAt: new Date() });
             const token = signToken(user);
 
             return { token, user };

@@ -20,6 +20,9 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
+        createdAt: {
+            type: String,
+        },
         plaidAccessToken: {
             type: String,
         },

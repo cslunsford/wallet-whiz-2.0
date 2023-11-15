@@ -3,6 +3,7 @@ const typeDefs = `
         _id: ID
         username: String
         email: String
+        createdAt: String
         plaidAccessToken: String
         accounts: [Account]
         transactions: [Transaction]
