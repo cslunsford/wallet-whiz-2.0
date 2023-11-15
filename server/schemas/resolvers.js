@@ -116,6 +116,7 @@ const resolvers = {
                             amount: transaction.amount,
                             merchantName: transaction.merchant_name || transaction.name,
                             date: transaction.date,
+                            category: transaction.personal_finance_category.primary || transaction.personal_finance_category.detailed,
                         };
                         return plaidTransactionData;
                     })

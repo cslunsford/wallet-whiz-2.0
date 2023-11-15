@@ -29,6 +29,7 @@ export const TRANSACTIONS = gql`
             amount
             merchantName
             date
+            category
         }
     }
 `;
