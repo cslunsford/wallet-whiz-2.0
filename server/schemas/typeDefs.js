@@ -22,6 +22,7 @@ const typeDefs = `
         amount: Float
         merchantName: String
         date: String
+        category: String
     }
 
     type Auth {

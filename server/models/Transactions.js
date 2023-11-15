@@ -13,6 +13,9 @@ const transactionSchema = new Schema({
     date: {
         type: String,
     },
+    category: {
+        type: String,
+    }
 });
 
 module.exports = transactionSchema;

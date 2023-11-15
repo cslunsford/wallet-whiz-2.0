@@ -64,6 +64,7 @@ export const FETCH_PLAID_DATA = gql`
                 amount
                 merchantName
                 date
+                category
             }
         }
     }
