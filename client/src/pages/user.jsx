@@ -24,7 +24,6 @@ function User() {
                 <div className="container registerPage">
                     <h3 className="tagline">User Profile</h3>
                     <div className="container">
-                        <List>
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
