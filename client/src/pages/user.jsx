@@ -24,7 +24,6 @@ function User() {
                 <div className="container registerPage">
                     <h3 className="tagline">User Profile</h3>
                     <div className="container">
-                        <List>
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
@@ -60,11 +59,8 @@ function User() {
                             <UserAccounts />
                             </ListItem>
                         <Divider variant="inset"/>
-                        </List>
                     </div>
-                    {data && data.user && data.user.plaidAccessToken && (
                         <AccountButton />
-                    )}
                     {data && data.user && !data.user.plaidAccessToken && (
                     <PlaidButton userId={data.user._id} />
                 )}

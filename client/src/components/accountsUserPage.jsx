@@ -1,21 +1,25 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { ACCOUNTS } from '../utils/queries';
+import { ACCOUNTS, USER } from '../utils/queries';
 import Divider from '@mui/material/Divider';
 import CurrencyFormat from 'react-currency-format';
 import ListItemText from '@mui/material/ListItemText';
 
 const UserAccounts = () => {
-    const { loading, error, data } = useQuery(ACCOUNTS);
+    const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
+    const { loading: accountsLoading, error: accountsError, data: accountsData } = useQuery(ACCOUNTS);
 
-    if (loading) return <p>Loading...</p>
-    if (error) return <p>Error: {error.message}</p>
+    if (userLoading || accountsLoading) return <p>Loading...</p>
+    if (userError || accountsError) return <p>Error: {userError?.message || accountsError?.message}</p>
+
+    const user = userData.user;
+    const accounts = accountsData.accounts;
 
     return (
         <div>
             <ListItemText primary="Linked Banks:" />
-            {data.accounts.map((account) => (
-                <ListItemText secondary={account.accountName}/>
+            {accounts.map((account) => (
+                <ListItemText secondary={account.accountName} key={account._id}/>
             ))}
         </div>
     );
