@@ -21,7 +21,7 @@ const UserAccounts = () => {
 
     return (
         <div key={user._id}>
-            <h3 className="tagline">{user.username || user.email}'s Profile</h3>
+            <h3 className="tagline">{user.username || user.email}&apos;s Profile</h3>
             <div className="container">
                 <ListItem>
                     <ListItemAvatar>

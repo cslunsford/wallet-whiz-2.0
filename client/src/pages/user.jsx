@@ -6,6 +6,7 @@ import AccountButton from '../components/AccountButton';
 import UserAccounts from "../components/accountsUserPage";
 import { useQuery } from '@apollo/client';
 import { USER } from '../utils/queries';
+import ChangeUserProfile from "../components/ChangeUserProfile";
 
 function User() {
     const { loading, error, data } = useQuery(USER);
