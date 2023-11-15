@@ -11,6 +11,7 @@ import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import CloseIcon from '@mui/icons-material/Close';
 
 const UserAccounts = () => {
     const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
@@ -22,11 +23,14 @@ const UserAccounts = () => {
     const [updateField, setUpdateField] = useState(null);
     const [newUsername, setNewUsername] = useState('');
     const [newEmail, setNewEmail] = useState('');
-    
-    
+
     const handleUpdateClick = (field) => {
         setUpdateField(field);
     }
+
+    const handleCloseClick = () => {
+        setUpdateField(null);
+    };
     
     const handleSave = async () => {
         if (updateField === 'username') {
@@ -54,14 +58,18 @@ const UserAccounts = () => {
                         </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary='Username:' secondary={user.username} />
-                    <Button onClick={() => handleUpdateClick('username')}>Change Username</Button>
+                    <Button variant='contained' disableElevation onClick={() => handleUpdateClick('username')}>Change Username</Button>
                 </ListItem>
                 {updateField === 'username' && (
+                    <ListItem>
                     <TextField
                         label='New Username'
                         value={newUsername}
+                        variant='outlined'
                         onChange={(e) => setNewUsername(e.target.value)}
                         />
+                            <CloseIcon color='error' onClick={handleCloseClick} style={{ cursor: 'pointer' }} />
+                        </ListItem>
                 )}
                 <Divider variant="inset" />
                 <ListItem>
@@ -71,14 +79,18 @@ const UserAccounts = () => {
                         </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary='Email:' secondary={user.email} />
-                    <Button onClick={() => handleUpdateClick('email')}>Change Email</Button>
+                    <Button variant='contained' disableElevation onClick={() => handleUpdateClick('email')}>Change Email</Button>
                 </ListItem>
                 {updateField === 'email' && (
+                    <ListItem>
                     <TextField
                         label='New Email'
                         value={newEmail}
+                        variant='outlined'
                         onChange={(e) => setNewEmail(e.target.value)}
                         />
+                            <CloseIcon color='error' onClick={handleCloseClick} style={{ cursor: 'pointer' }} />
+                        </ListItem>
                 )}
                 <Divider variant="inset" />
                 <ListItem>
@@ -103,7 +115,7 @@ const UserAccounts = () => {
                 </ListItem>
                 <Divider variant="inset" />
                 {updateField && (
-                    <Button onClick={handleSave}>Save</Button>
+                    <Button variant='contained' disableElevation onClick={handleSave}>Save</Button>
                 )}
             </div>
         </div>
