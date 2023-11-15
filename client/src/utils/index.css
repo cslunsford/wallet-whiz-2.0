@@ -35,6 +35,12 @@
     font-size: 48px;
 }
 
+input:-webkit-autofill,
+.my-class:-webkit-autofill {
+    -webkit-text-fill-color: #fff;
+    -webkit-transition-delay: 9999999s;
+}
+
 .cards {
     background: transparent;
     align-items: center;
