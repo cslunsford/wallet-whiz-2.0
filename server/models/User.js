@@ -5,6 +5,11 @@ const transactionSchema = require('./Transactions');
 
 const userSchema = new Schema(
     {
+        username: {
+            type: String,
+            unique: true,
+            required: true,
+        },
         email: {
             type: String,
             required: true,
@@ -14,6 +19,9 @@ const userSchema = new Schema(
         password: {
             type: String,
             required: true,
+        },
+        createdAt: {
+            type: String,
         },
         plaidAccessToken: {
             type: String,
