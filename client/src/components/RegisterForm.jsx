@@ -7,7 +7,7 @@ import { REGISTER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const RegisterForm = () => {
-    const [userFormData, setUserFormData] = useState({ email: '', password: '', confirmPassword: '' });
+    const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '', confirmPassword: '' });
     const [validated, setValidated] = useState(false);
     const [showError, setShowError] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
@@ -64,10 +64,10 @@ const RegisterForm = () => {
                     type='username'
                     name='username'
                     onChange={handleInputChange}
-                    value={userFormData.email}
+                    value={userFormData.username}
                     required
                 />
-                <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+                <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
             </Form.Group>
             <Form.Group>
             <TextField

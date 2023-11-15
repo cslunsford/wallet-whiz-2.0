@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { FETCH_PLAID_DATA } from '../utils/mutations';
 import { USER } from '../utils/queries';
@@ -19,9 +19,13 @@ function AccountButton() {
     }
 
     return (
+        <div>
+        {data && data.user && data.user.plaidAccessToken && (
         <Button variant='contained' onClick={handleButtonClick} disableElevation>
             Update Account Data
         </Button>
+        )}
+        </div>
     );
 }
 

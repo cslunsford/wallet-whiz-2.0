@@ -1,7 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import '../App.css'; 
-
+import { useQuery } from '@apollo/client';
+import { USER } from '../utils/queries';
 import Button from '@mui/material/Button';
 import PlaidAccounts from '../components/PlaidAccounts';
 import PlaidTransactions from '../components/PlaidTransactions';
@@ -27,6 +28,11 @@ function Dashboard() {
       },
     ],
   };
+
+  const { loading, error, data } = useQuery(USER);
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error.message}</p>
 
   return (
     <div>

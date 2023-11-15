@@ -13,13 +13,32 @@ export const LOGIN_USER = gql`
 `;
 
 export const REGISTER = gql`
-    mutation register($email: String!, $password: String!) {
-        register(email: $email, password: $password) {
+    mutation register($username: String!, $email: String!, $password: String!) {
+        register(username: $username, email: $email, password: $password) {
             token
             user {
                 _id
+                username
                 email
             }
+        }
+    }
+`;
+
+export const UPDATE_USERNAME = gql`
+    mutation updateUsername($userId: ID!, $username: String!) {
+        updateUsername(userId: $userId, username: $username) {
+            _id
+            username
+        }
+    }
+`;
+
+export const UPDATE_EMAIL = gql`
+    mutation updateEmail($userId: ID!, $username: String!) {
+        updateEmail(userId: $userId, email: $email) {
+            _id
+            email
         }
     }
 `;
