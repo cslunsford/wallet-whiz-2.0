@@ -15,6 +15,7 @@ function AccountButton() {
                     accessToken: data.user.plaidAccessToken
                 }
             });
+            window.location.reload();
         }
     }
 
