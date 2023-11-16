@@ -11,7 +11,7 @@ router.post('/create_link_token', async function (req, res) {
         client_name: 'Plaid Test App',
         products: ['auth'],
         language: 'en',
-        // redirect_uri: `http://localhost:${process.env.PORT || 3001}/api`,
+        redirect_uri: 'https://frozen-brushlands-26062-9afa804fc3f2.herokuapp.com/api' || 'http://localhost:3001/api',
         country_codes: ['US'],
     };
     console.log(plaidRequest);
