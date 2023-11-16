@@ -13,12 +13,13 @@ function Dashboard() {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error.message}</p>
 
+  const user = data.user;
   return (
     <div>
       <div className="container" id='pageBox'>
-        <div className="container pageInner">
+        <div key={user._id} className="container pageInner">
           <div className="container balanceAlign">
-          <h2 className="headerText dashboardHeader">Hello User!</h2>
+          <h2 className="headerText dashboardHeader">Hello {user.username || user.email}!</h2>
             <div className="container">
               <h3 className="headerText" id="accountsHeader">
                 ACCOUNTS
