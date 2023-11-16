@@ -24,12 +24,10 @@ const SpendingChart = () => {
     };
 
     const Options = {
-        options: {
-            plugins: {
-                legend: {
-                    labels: {
-                        color: "red",
-                    },
+        plugins: {
+            legend: {
+                labels: {
+                    color: "white",
                 },
             },
         },
