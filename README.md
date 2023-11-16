@@ -19,6 +19,8 @@ Technologies used:
 ![Technologies](https://img.shields.io/badge/-React-000000?logo=JQuery&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-Graphql-000000?logo=JQuery&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-Mongoose-000000?logo=JQuery&logoColor=white)
+![Technologies](https://img.shields.io/badge/-JWT-000000?logo=JQuery&logoColor=white)
+![Technologies](https://img.shields.io/badge/-OAuth-000000?logo=JQuery&logoColor=white)
 
 ***
 
@@ -95,7 +97,7 @@ All files are in package.json
 
 ***Client dependencies***
 
-[apollo/client] | [emotion/react] | [emotion/styled] | [mui/material] [bootstrap] | [chart.js] | [graphql] | [OAuth] | [react-bootstrap] |[react-chartjs-2] | [react-currency-format] | [react-dom] | [react-plaid-link] | [react-router-dom]
+[apollo/client] | [emotion/react] | [emotion/styled] | [mui/material] [bootstrap] | [chart.js] | [graphql] | [OAuth] | [JWT] | [react-bootstrap] |[react-chartjs-2] | [react-currency-format] | [react-dom] | [react-plaid-link] | [react-router-dom]
 
 ***Server dependencies***
 
