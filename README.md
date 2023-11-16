@@ -38,16 +38,16 @@ Technologies used:
 
 ## Description
 
-This project is a dynamic full-stack application adhering to the Model-View-Controller (MVC) design pattern, leveraging JavaScript for both its backend and frontend components. It incorporates the Plaid API for seamless financial data integration. The backend is powered by Node.js, ensuring robust server-side functionality, while the frontend is developed using JavaScript to create an interactive user experience. Additionally, the application is deployed using React, a popular JavaScript library for building user interfaces, enhancing its responsiveness and interactivity. For database management, it utilizes Mongoose, an object data modeling (ODM) library for MongoDB, along with GraphQL, a query language for APIs. This combination allows for efficient data storage, retrieval, and manipulation, ensuring smooth and scalable database operations. This comprehensive setup provides a versatile financial application with a seamless user interface and efficient data handling.
+This project is a dynamic full-stack application adhering to the Model-View-Controller (MVC) design pattern, leveraging JavaScript for both its backend and frontend components. It incorporates the Plaid API for seamless financial data integration. The backend is powered by Node.js, ensuring robust server-side functionality, while the front end is developed using JavaScript to create an interactive user experience. Additionally, the application is deployed using React, a popular JavaScript library for building user interfaces and enhancing its responsiveness and interactivity. For database management, it utilizes Mongoose, an object data modeling (ODM) library for MongoDB, along with GraphQL, a query language for APIs. This combination allows for efficient data storage, retrieval, and manipulation, ensuring smooth and scalable database operations. This comprehensive setup provides a versatile financial application with a seamless user interface and efficient data handling.
 
-### Requierments
+### Requirements
 
 ```
 Use Node.js and Express.js to create a RESTful API.
 
 Use react as the templating engine.
 
-Use Mongo Atlas and the Mongoose for the database.
+Use Mongo Atlas and Mongoose for the database.
 
 Have both GET and POST routes for retrieving and adding new data.
 
@@ -84,9 +84,9 @@ All files are in package.json
 
 ### Instructions
 
-1. Clone the GitHub repository to you local computer. Click on the following link.
+1. Clone the GitHub repository to your local computer. Click on the following link.
 
-- Repository link : <https://github.com/cslunsford/wallet-wiz-2.0>
+- Repository link: <https://github.com/cslunsford/wallet-wiz-2.0>
 
 2. Install the following packages:
 
@@ -145,5 +145,5 @@ This application is covered under the MIT License.
 Copyright (c) September 2023  
 
     This software/code is licensed under the MIT License; 
-    to use this software/code you must agree to follow and comply the License.
+    to use this software/code you must agree to follow and comply with the License.
     A copy of the License can be found at: https://www.gnu.org/licenses/gpl-3.0.md 
