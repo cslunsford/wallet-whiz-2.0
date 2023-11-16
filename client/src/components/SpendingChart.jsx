@@ -14,14 +14,17 @@ const SpendingChart = () => {
 
     const transactionData = data?.transactions || [];
 
-    const categories = transactionData.map((transaction) =>
-        transaction.category.toLowerCase()
-    );
-    const amounts = transactionData.map((transaction) => transaction.amount);
-    const amountFiltered = amounts.filter((n) => n > 0);
-    const legend = {
-        display: false,
-    };
+    const categoryAmount = transactionData.reduce((acc, transaction) => {
+        const category = transaction.category;
+        if (transaction.amount >= 0) {
+            acc[category] = (acc[category] || 0) + transaction.amount;
+        }
+        return acc;
+    }, {});
+
+    const categories = Object.keys(categoryAmount);
+    const amount = Object.values(categoryAmount);
+    const totalSum = amount.reduce((sum, value) => sum + value, 0);
 
     const Options = {
         plugins: {
@@ -30,6 +33,16 @@ const SpendingChart = () => {
                     color: "white",
                 },
             },
+            tooltip: {
+                callbacks: {
+                    label: function (context) {
+                        const label = context.label;
+                        const value = context.parsed;
+                        const percentage = ((value / totalSum) * 100).toFixed(2) + '%';
+                        return `${label}: ${percentage}`;
+                    }
+                }
+            }
         },
     };
 
@@ -37,12 +50,13 @@ const SpendingChart = () => {
         labels: categories,
         datasets: [
             {
-                data: amountFiltered,
+                data: amount,
                 fontColor: "#fff",
                 backgroundColor: [
-                    "rgba(255, 99, 132, 0.6)",
-                    "rgba(54, 162, 235, 0.6)",
-                    "rgba(255, 206, 86, 0.6)",
+                    '#010052',
+                    '#0009A3',
+                    '#9E00A3',
+                    '#BD2222',
                 ],
             },
         ],
