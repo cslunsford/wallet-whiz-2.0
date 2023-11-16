@@ -148,7 +148,7 @@ For additional questions, Github page:(<https://github.com/cslunsford/wallet-whi
 
 This application is covered under the MIT License.
 
-Copyright (c) September 2023  
+Copyright (c) November 2023  
 
     This software/code is licensed under the MIT License; 
     to use this software/code you must agree to follow and comply with the License.
