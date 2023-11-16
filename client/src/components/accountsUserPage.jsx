@@ -13,8 +13,6 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-
 
 const UserAccounts = () => {
     const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
