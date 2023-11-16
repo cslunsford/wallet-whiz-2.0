@@ -14,7 +14,6 @@ Technologies used:
 ![Technologies](https://img.shields.io/badge/-JavaScript-007396?logo=JavaScript&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-Node.js-339933?logo=Node.js&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-npm-CB3837?logo=npm&logoColor=white)
-![Technologies](https://img.shields.io/badge/-Inquirer-000000?logo=&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-Plaid-000000?logo=PLAID&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-jQuery-000000?logo=JQuery&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-React-000000?logo=JQuery&logoColor=white)
@@ -73,14 +72,16 @@ Protect API keys and sensitive information with environment variables
 
 The installation can be completed by following these instructions:
 Clone repository
+```
 run: npm i
 run: npm run develop
+```
 The main page will open
 
 ***Requirments***
 All files are in package.json
 [Node.js](https://nodejs.org/en/) | [MySQL](https://www.npmjs.com/package/mysql2) | [Sequelize] <https://www.npmjs.com/package/sequelize> | [Express] <https://www.npmjs.com/package/express> | [dotenv] <https://www.npmjs.com/package/dotenv> | [Plaid] <https://www.plaid.com> |
-[axios] <https://axios-http.com> | [jquery] <https://jquery.com> | [react] <https://react.com> | [moment] <https://moment.com>
+[axios] <https://axios-http.com> | [jquery] <https://jquery.com> | [react] <https://react.com> | [moment] <https://momentjs.com>
 
 ### Instructions
 
