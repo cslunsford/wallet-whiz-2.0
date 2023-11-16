@@ -82,7 +82,7 @@ The main page will open
 
 ***Requirments***
 All files are in package.json
-[Node.js](https://nodejs.org/en/) | [MySQL](https://www.npmjs.com/package/mysql2) | [Sequelize] <https://www.npmjs.com/package/sequelize> | [Express] <https://www.npmjs.com/package/express> | [dotenv] <https://www.npmjs.com/package/dotenv> | [Plaid] <https://www.plaid.com> |
+[Node.js](https://nodejs.org/en/) | [MySQL](https://www.npmjs.com/package/mysql2) | [Mongoose] <https://www.npmjs.com/package/mongoose> | [Express] <https://www.npmjs.com/package/express> | [dotenv] <https://www.npmjs.com/package/dotenv> | [Plaid] <https://www.plaid.com> |
 [axios] <https://axios-http.com> | [jquery] <https://jquery.com> | [react] <https://react.com> | [moment] <https://momentjs.com>
 
 ### Instructions
@@ -95,7 +95,7 @@ All files are in package.json
 
 ***Client dependencies***
 
-[apollo/client] | [emotion/react] | [emotion/styled] | [mui/material] [bootstrap] | [chart.js] | [graphql] | [jwt-decode] | [react-bootstrap] |[react-chartjs-2] | [react-currency-format] | [react-dom] | [react-plaid-link] | [react-router-dom]
+[apollo/client] | [emotion/react] | [emotion/styled] | [mui/material] [bootstrap] | [chart.js] | [graphql] | [OAuth] | [react-bootstrap] |[react-chartjs-2] | [react-currency-format] | [react-dom] | [react-plaid-link] | [react-router-dom]
 
 ***Server dependencies***
 
