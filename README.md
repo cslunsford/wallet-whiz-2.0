@@ -24,7 +24,6 @@ Technologies used:
 ***
 
 ## Table of Contents
-
 - [Description](#description)
 - [Requirements](#requierments)
 - [Installation](#installation)
@@ -43,16 +42,43 @@ This project is a dynamic full-stack application adhering to the Model-View-Cont
 
 ### Requierments
 
---
+```
+Use Node.js and Express.js to create a RESTful API.
 
-***
+Use react as the templating engine.
+
+Use Mongo Atlas and the Mongoose for the database.
+
+Have both GET and POST routes for retrieving and adding new data.
+
+Be deployed using Heroku (with data).
+
+Use at least one new library, package, or technology that we haven’t discussed.
+
+Have a polished UI.
+
+Be responsive.
+
+Be interactive (i.e., accept and respond to user input).
+
+Have a folder structure that meets the MVC paradigm.
+
+Include authentication (express-session and cookies).
+
+Protect API keys and sensitive information with environment variables
+```
+*** 
 
 ## Installation
 
 The installation can be completed by following these instructions:
+Clone repository
+run: npm i
+run: npm run develop
+The main page will open
 
 ***Requirments***
-
+All files are in package.json
 [Node.js](https://nodejs.org/en/) | [MySQL](https://www.npmjs.com/package/mysql2) | [Sequelize] <https://www.npmjs.com/package/sequelize> | [Express] <https://www.npmjs.com/package/express> | [dotenv] <https://www.npmjs.com/package/dotenv> | [Plaid] <https://www.plaid.com> |
 [axios] <https://axios-http.com> | [jquery] <https://jquery.com> | [react] <https://react.com> | [moment] <https://moment.com>
 
@@ -84,22 +110,25 @@ The installation can be completed by following these instructions:
 
 ## Usage  
 
-To execute the script, open a Git terminal on the main project folder (cloned folder) Run the following command: npm start
+To execute the script, open a Git terminal on the main project folder (cloned folder) Run the following command: 
+```
+npm run develop
+```
 
 ### Deployment
 
 Link to Heroku
-[Click] ()
+[Click] (https://frozen-brushlands-26062-9afa804fc3f2.herokuapp.com/)
 ***
 
 ## Contributing
 
 ***
-Chaz Coats            Email:<chazcoats2@hotmail.com>              Github:<ChazCoats98
-Christopher Lunsford  Email:<christopher.lunsford@uconn.edu>      Github:<cslunsford
-Danik Therrien        Email:<daniktherrien@gmail.com>             Github:<DrDanik88
-Ronald Curcurato      Email:<rcurcurato89@gmail.com>              Github:<Rcurcurato
-Jason Obeng Dappah    Email:<jacmo074@gmail.com>                  Github:<JObengDappah
+Chaz Coats            Github:<ChazCoats98
+Christopher Lunsford  Github:<cslunsford
+Danik Therrien        Github:<DrDanik88
+Ronald Curcurato      Github:<Rcurcurato
+Jason Obeng Dappah    Github:<JObengDappah
 
 ***
 
