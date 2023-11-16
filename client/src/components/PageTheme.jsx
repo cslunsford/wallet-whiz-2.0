@@ -17,11 +17,11 @@ export const PageTheme = createTheme({
             }
         },
         MuiDivider: {
-          styleOverrides: {
-            root: {
-              backgroundColor: '#fff',
-            }
-          },
+            styleOverrides: {
+                root: {
+                    backgroundColor: '#fff',
+                }
+            },
         },
         MuiTextField: {
             styleOverrides: {
@@ -51,6 +51,9 @@ export const PageTheme = createTheme({
                     },
                     '& label.Mui-focused': {
                         color: '#afafaf',
+                    },
+                    '& div': {
+                        color: '#fff'
                     },
                 },
             },
