@@ -25,7 +25,8 @@
     "react-currency-format": "^1.1.0",
     "react-dom": "^18.2.0",
     "react-plaid-link": "^3.5.1",
-    "react-router-dom": "^6.11.2"
+    "react-router-dom": "^6.11.2",
+    "vite": "^4.4.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -34,7 +35,6 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "vite": "^4.4.5"
+    "eslint-plugin-react-refresh": "^0.4.3"
   }
 }
