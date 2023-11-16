@@ -10,7 +10,7 @@ router.post('/create_link_token', async function (req, res) {
         client_name: 'Plaid Test App',
         products: ['auth'],
         language: 'en',
-        redirect_uri: 'http://localhost:3001/api',
+        redirect_uri: process.env.REDIRECT_URI || 'http://localhost:3001/api',
         country_codes: ['US'],
     };
     console.log(plaidRequest);
