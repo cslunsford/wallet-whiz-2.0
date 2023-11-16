@@ -5,7 +5,7 @@ import { EXCHANGE_PUBLIC_TOKEN } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import Button from '@mui/material/Button';
 
-axios.defaults.baseURL = `http://localhost:${process.env.PORT || 3001}/api`;
+// axios.defaults.baseURL = `http://localhost:${process.env.PORT || 3001}/api`;
 
 function PlaidAuth({ publicToken }) {
   const [exchangePublicToken] = useMutation(EXCHANGE_PUBLIC_TOKEN);
