@@ -124,14 +124,17 @@ Link to Heroku
 
 ## Contributing
 
-***
-Chaz Coats            Github:<ChazCoats98
-Christopher Lunsford  Github:<cslunsford
-Danik Therrien        Github:<DrDanik88
-Ronald Curcurato      Github:<Rcurcurato
-Jason Obeng Dappah    Github:<JObengDappah
-
-***
+<br>
+Chaz Coats            Github: ChazCoats98
+</br><br>
+Christopher Lunsford  Github: Cslunsford
+</br><br>
+Danik Therrien        Github: DrDanik88
+</br><br>
+Ronald Curcurato      Github: Rcurcurato
+</br><br>
+Jason Obeng Dappah    Github: JObengDappah
+</br>
 
 ## Contact
 
