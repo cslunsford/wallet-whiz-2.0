@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const plaidClient = require('../config/plaid.js');
+require('dotenv').config;
 
 router.post('/create_link_token', async function (req, res) {
     const plaidRequest = {
