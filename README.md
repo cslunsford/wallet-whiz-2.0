@@ -70,6 +70,7 @@ Have a folder structure that meets the MVC paradigm.
 Include authentication (express-session and cookies).
 
 Protect API keys and sensitive information with environment variables
+***Once you copied the the repo, make sure you use your own PLAID keys and add your IP and port of your localhost/heroku on your plaid dev account***
 ```
 *** 
 
