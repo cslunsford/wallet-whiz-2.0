@@ -42,6 +42,7 @@ Technologies used:
 This project is a dynamic full-stack application adhering to the Model-View-Controller (MVC) design pattern, leveraging JavaScript for both its backend and frontend components. It incorporates the Plaid API for seamless financial data integration. The backend is powered by Node.js, ensuring robust server-side functionality, while the front end is developed using JavaScript to create an interactive user experience. Additionally, the application is deployed using React, a popular JavaScript library for building user interfaces and enhancing its responsiveness and interactivity. For database management, it utilizes Mongoose, an object data modeling (ODM) library for MongoDB, along with GraphQL, a query language for APIs. This combination allows for efficient data storage, retrieval, and manipulation, ensuring smooth and scalable database operations. This comprehensive setup provides a versatile financial application with a seamless user interface and efficient data handling.
 
 ![Alt text](./wiz_transaction.PNG)
+![Alt text](./wiz_pie.PNG)
 
 ### Requirements
 
